@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Emblema Corporativo: THERMA-TEK INDÚSTRIAS (Fogo e Aço) -->
+  <g fill="none" stroke="#FF5722" stroke-width="10" stroke-linejoin="miter">
+    <!-- Bigorna Hexagonal Brutalista -->
+    <polygon points="128,16 226,72 226,184 128,240 30,184 30,72" fill="#1A110E" stroke="#FF5722" stroke-width="10"/>
+    <polygon points="64,152 192,152 172,192 84,192" fill="#FF5722" stroke="none"/>
+    <!-- 3 Ondas Verticais de Calor Ascendente -->
+    <path d="M96,136 C84,116 108,96 96,72" stroke="#FFB300" stroke-width="10" stroke-linecap="round"/>
+    <path d="M128,136 C116,112 140,88 128,56" stroke="#FFB300" stroke-width="12" stroke-linecap="round"/>
+    <path d="M160,136 C148,116 172,96 160,72" stroke="#FFB300" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>

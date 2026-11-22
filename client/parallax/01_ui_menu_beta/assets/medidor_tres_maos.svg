@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="360" height="72">
+  <!-- Medidor das Tres Maos (Goliath / Phantom / Cipher - 0.4s hold para abrir valvula) -->
+  <polygon points="10,4 350,4 356,10 356,62 350,68 10,68 4,62 4,10" fill="#10141A" stroke="#4A596B" stroke-width="2"/>
+  <!-- 3 Selos de Prontidao das Classes -->
+  <!-- Mao 1: Goliath (Laranja Therma-Tek) -->
+  <g transform="translate(38,36)">
+    <polygon points="0,-20 17,-10 17,10 0,20 -17,10 -17,-10" fill="#2A1610" stroke="#FF5722" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="6" fill="#FF5722"/>
+  </g>
+  <!-- Mao 2: Phantom (Ciano Kinesys) -->
+  <g transform="translate(96,36)">
+    <polygon points="0,-20 17,-10 17,10 0,20 -17,10 -17,-10" fill="#0B222A" stroke="#00E5FF" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="6" fill="#00E5FF"/>
+  </g>
+  <!-- Mao 3: Cipher (Violeta Omni-Cripto) -->
+  <g transform="translate(154,36)">
+    <polygon points="0,-20 17,-10 17,10 0,20 -17,10 -17,-10" fill="#1C142B" stroke="#B388FF" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="6" fill="#B388FF"/>
+  </g>
+  <!-- Barras de acoplamento mecanico -->
+  <line x1="56" y1="36" x2="78" y2="36" stroke="#FFB300" stroke-width="3"/>
+  <line x1="114" y1="36" x2="136" y2="36" stroke="#FFB300" stroke-width="3"/>
+  <!-- Rotulo -->
+  <text x="188" y="33" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#FFB300" letter-spacing="1.5">TRÊS MÃOS</text>
+  <text x="188" y="50" font-family="Consolas, monospace" font-size="10" fill="#90A4AE">SEGURAR [ENTER] 0.4s</text>
+</svg>

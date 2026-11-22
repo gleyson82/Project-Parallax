@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 128" width="880" height="128">
+  <!-- Camada A (Chapa de Aco Austenitico - PARALLAX em <path> vetorial estencil puro) -->
+  <defs>
+    <linearGradient id="steelPlateA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#171C23"/>
+      <stop offset="100%" stop-color="#0E1217"/>
+    </linearGradient>
+    <clipPath id="parallaxStencilCut">
+      <!-- Faixa de corte de paralaxe a 45 graus -->
+      <path d="M0,0 H880 V61 H0 Z M0,67 H880 V128 H0 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Moldura Brutalista Chanfrada com 4 Parafusos Hexagonais -->
+  <polygon points="20,6 860,6 874,20 874,108 860,122 20,122 6,108 6,20" fill="url(#steelPlateA)" stroke="#4A596B" stroke-width="3"/>
+  <polygon points="26,12 854,12 868,26 868,102 854,116 26,116 12,102 12,26" fill="none" stroke="#252E38" stroke-width="1.5"/>
+
+  <!-- Parafusos nos 4 cantos -->
+  <g fill="#2C3744" stroke="#607387" stroke-width="1.5">
+    <polygon points="26,20 31,23 31,29 26,32 21,29 21,23"/>
+    <polygon points="854,20 859,23 859,29 854,32 849,29 849,23"/>
+    <polygon points="26,96 31,99 31,105 26,108 21,105 21,99"/>
+    <polygon points="854,96 859,99 859,105 854,108 849,105 849,99"/>
+  </g>
+
+  <!-- Letras Estencil Brutalistas (P A R A L L A X) em paths puros com chanfros de 45 graus -->
+  <g fill="#D8E2EC" clip-path="url(#parallaxStencilCut)">
+    <!-- P (x=66..140) -->
+    <path d="M66,24 H124 L140,40 V58 L124,74 H86 V104 H66 Z M86,40 V58 H118 L120,56 V42 L118,40 Z"/>
+    <!-- A (x=156..234) -->
+    <path d="M180,24 H210 L234,104 H212 L206,82 H184 L178,104 H156 Z M188,66 H202 L195,40 Z"/>
+    <!-- R (x=250..326) -->
+    <path d="M250,24 H310 L326,40 V56 L312,70 L328,104 H305 L291,74 H270 V104 H250 Z M270,40 V58 H304 L306,56 V42 L304,40 Z"/>
+    <!-- A (x=342..420) -->
+    <path d="M366,24 H396 L420,104 H398 L392,82 H370 L364,104 H342 Z M374,66 H388 L381,40 Z"/>
+    <!-- L (x=438..504) -->
+    <path d="M438,24 H458 V86 H504 V104 H438 Z"/>
+    <!-- L (x=522..588) -->
+    <path d="M522,24 H542 V86 H588 V104 H522 Z"/>
+    <!-- A (x=604..682) -->
+    <path d="M628,24 H658 L682,104 H660 L654,82 H632 L626,104 H604 Z M636,66 H650 L643,40 Z"/>
+    <!-- X (x=698..784) -->
+    <path d="M698,24 H722 L741,53 L760,24 H784 L754,64 L786,104 H762 L741,74 L720,104 H696 L728,64 Z"/>
+  </g>
+
+  <!-- Marcacoes tecnicas de calibracao nas laterais -->
+  <g fill="#4A596B">
+    <rect x="38" y="56" width="14" height="3"/>
+    <rect x="38" y="69" width="14" height="3"/>
+    <rect x="828" y="56" width="14" height="3"/>
+    <rect x="828" y="69" width="14" height="3"/>
+  </g>
+</svg>

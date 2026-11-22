@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Emblema Corporativo: OMNI-CRIPTO (A Marca da Luz e Dados) -->
+  <g fill="none" stroke="#B388FF" stroke-width="8">
+    <!-- Olho Quântico Triangular -->
+    <polygon points="128,24 232,204 24,204" fill="#140E22" stroke="#B388FF" stroke-width="10" stroke-linejoin="bevel"/>
+    <circle cx="128" cy="144" r="44" stroke="#E1BEE7" stroke-width="8"/>
+    <!-- Pupila em Chave Tripla -->
+    <circle cx="128" cy="144" r="14" fill="#B388FF"/>
+    <line x1="128" y1="76" x2="128" y2="100" stroke="#B388FF" stroke-width="8"/>
+    <line x1="70" y1="178" x2="90" y2="166" stroke="#B388FF" stroke-width="8"/>
+    <line x1="186" y1="178" x2="166" y2="166" stroke="#B388FF" stroke-width="8"/>
+  </g>
+</svg>

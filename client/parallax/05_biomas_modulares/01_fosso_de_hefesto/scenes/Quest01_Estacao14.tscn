@@ -1,0 +1,477 @@
+[gd_scene load_steps=62 format=3 uid="uid://parallax_quest01_estacao14"]
+
+[ext_resource type="Script" path="res://05_biomas_modulares/01_fosso_de_hefesto/scripts/Quest01_Estacao14.gd" id="1_q1"]
+[ext_resource type="Script" path="res://02_core_shaders_e_camera/scripts/BeatSequencer.gd" id="2_beat"]
+[ext_resource type="Script" path="res://02_core_shaders_e_camera/scripts/ThermalNode.gd" id="3_thermal"]
+[ext_resource type="Shader" path="res://02_core_shaders_e_camera/shaders/goliath_thermal.gdshader" id="4_sh_gol"]
+[ext_resource type="Shader" path="res://02_core_shaders_e_camera/shaders/phantom_optic.gdshader" id="5_sh_pha"]
+[ext_resource type="Shader" path="res://02_core_shaders_e_camera/shaders/cipher_net.gdshader" id="6_sh_cip"]
+[ext_resource type="Shader" path="res://07_vfx_e_hud_combate/termico_e_criogenico/heat_shimmer.gdshader" id="7_sh_heat"]
+[ext_resource type="Texture2D" path="res://02_core_shaders_e_camera/assets/thermal_gradient_lut.png" id="8_lut"]
+[ext_resource type="Texture2D" path="res://02_core_shaders_e_camera/assets/omega_glitch_noise.png" id="9_glitch"]
+[ext_resource type="Texture2D" path="res://02_core_shaders_e_camera/assets/phantom_reticle_overlay.svg" id="10_ret"]
+[ext_resource type="Texture2D" path="res://02_core_shaders_e_camera/assets/override_terminal_frame.png" id="11_ovr"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_wall_rust_albedo.png" id="12_wall_a"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_wall_rust_normal.png" id="13_wall_n"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_wall_rust_roughness.png" id="14_wall_r"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_floor_grate_albedo.png" id="15_grate_a"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_floor_grate_normal.png" id="16_grate_n"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_floor_grate_roughness.png" id="17_grate_r"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_rock_fault_albedo.png" id="18_rock_a"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_rock_fault_normal.png" id="19_rock_n"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_rock_fault_roughness.png" id="20_rock_r"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_beam_hazard_albedo.png" id="21_beam_a"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_beam_hazard_normal.png" id="22_beam_n"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/fosso_beam_hazard_roughness.png" id="23_beam_r"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/skybox_face_voltada_fresta.png" id="24_sky"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/decal_relogio_23_anos.svg" id="25_dec23"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/decal_etiqueta_cota_souza.svg" id="26_deccota"]
+[ext_resource type="Texture2D" path="res://05_biomas_modulares/01_fosso_de_hefesto/textures/decal_valvula_num_14.svg" id="27_dec14"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/goliath/goliath_rigged.glb" id="28_gol"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/phantom/phantom_rigged.glb" id="29_pha"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/cipher/cipher_rigged.glb" id="30_cip"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/auxiliares/auxiliar_macaco.glb" id="31_mac"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/auxiliares/auxiliar_pipa.glb" id="32_pip"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/auxiliares/auxiliar_cartucho_override.glb" id="33_car"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/valvulas_e_portas/prop_porta_chumbo_10t.glb" id="34_door"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/valvulas_e_portas/prop_valvula_mestra_thermatek.glb" id="35_valv"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/linhas_vivas_e_relogios/prop_linha_viva_modular.glb" id="36_live"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/linhas_vivas_e_relogios/prop_manometro_140.glb" id="37_gauge"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/terminais_e_farois/prop_terminal_omnicripto.glb" id="38_term"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/valvulas_e_portas/prop_conteiner_acumuladores.glb" id="39_cont"]
+[ext_resource type="PackedScene" path="res://04_props_e_interativos_puzzles/valvulas_e_portas/prop_duto_sangria_estacao14.glb" id="40_chute"]
+[ext_resource type="PackedScene" path="res://06_inimigos_e_bosses/esquadras_de_contencao/inimigo_esquadra_contencao.glb" id="41_enemy"]
+[ext_resource type="PackedScene" path="res://03_classes_e_auxiliares/armas/arma_thermatek_canhao_escoria.glb" id="42_gun"]
+[ext_resource type="PackedScene" path="res://07_vfx_e_hud_combate/termico_e_criogenico/item_nucleo_termico.glb" id="43_core"]
+[ext_resource type="PackedScene" path="res://05_biomas_modulares/01_fosso_de_hefesto/meshes/fosso_pilar_ibeam.glb" id="44_pillar"]
+
+[sub_resource type="Environment" id="Environment_fosso"]
+background_mode = 1
+background_color = Color(0.02, 0.025, 0.035, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.24, 0.16, 0.14, 1)
+ambient_light_energy = 0.72
+fog_enabled = true
+fog_light_color = Color(0.22, 0.09, 0.05, 1)
+fog_density = 0.008
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_goliath"]
+shader = ExtResource("4_sh_gol")
+shader_parameter/thermal_lut = ExtResource("8_lut")
+shader_parameter/use_thermal_lut = true
+shader_parameter/thermal_contrast = 1.35
+shader_parameter/seismic_pulse_intensity = 0.22
+shader_parameter/hot_color = Color(1, 0.34, 0.13, 1)
+shader_parameter/cold_color = Color(0.07, 0.11, 0.18, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phantom"]
+shader = ExtResource("5_sh_pha")
+shader_parameter/optic_edge_color = Color(0, 0.9, 1, 1)
+shader_parameter/edge_strength = 1.65
+shader_parameter/prism_refraction = 0.0022
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cipher"]
+shader = ExtResource("6_sh_cip")
+shader_parameter/glitch_noise = ExtResource("9_glitch")
+shader_parameter/use_glitch_texture = true
+shader_parameter/leak_count = 0
+shader_parameter/net_color = Color(0.7, 0.53, 1, 1)
+shader_parameter/omega_error_color = Color(1, 0.09, 0.27, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_heat"]
+shader = ExtResource("7_sh_heat")
+shader_parameter/heat_color = Color(1, 0.42, 0.12, 0.32)
+shader_parameter/rise_speed = 0.65
+shader_parameter/shimmer_freq = 10.0
+
+[sub_resource type="StandardMaterial3D" id="Mat_WallRust"]
+albedo_texture = ExtResource("12_wall_a")
+metallic = 0.68
+roughness_texture = ExtResource("14_wall_r")
+normal_enabled = true
+normal_texture = ExtResource("13_wall_n")
+uv1_scale = Vector3(0.35, 0.35, 0.35)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="Mat_FloorGrate"]
+albedo_texture = ExtResource("15_grate_a")
+metallic = 0.72
+roughness_texture = ExtResource("17_grate_r")
+normal_enabled = true
+normal_texture = ExtResource("16_grate_n")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="Mat_RockFault"]
+albedo_texture = ExtResource("18_rock_a")
+metallic = 0.15
+roughness_texture = ExtResource("20_rock_r")
+normal_enabled = true
+normal_texture = ExtResource("19_rock_n")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="Mat_BeamHazard"]
+albedo_texture = ExtResource("21_beam_a")
+metallic = 0.65
+roughness_texture = ExtResource("23_beam_r")
+normal_enabled = true
+normal_texture = ExtResource("22_beam_n")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="Mat_SkyboxVista"]
+shading_mode = 0
+albedo_texture = ExtResource("24_sky")
+
+[sub_resource type="BoxMesh" id="BoxMesh_MainFloor"]
+size = Vector3(48, 0.5, 9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_BackWallA"]
+size = Vector3(18, 8, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_BackWallB"]
+size = Vector3(14, 8, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_RockBackdrop"]
+size = Vector3(52, 6, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Catwalk"]
+size = Vector3(32, 0.35, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_Skybox"]
+size = Vector2(34, 19)
+
+[sub_resource type="QuadMesh" id="QuadMesh_HeatPlane"]
+size = Vector2(7, 3.2)
+
+[node name="Quest01_Estacao14" type="Node3D"]
+script = ExtResource("1_q1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fosso")
+
+[node name="BeatSequencer" type="Node" parent="."]
+script = ExtResource("2_beat")
+
+[node name="OrthoCamera25D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, -12, 3.6, 17)
+projection = 1
+current = true
+size = 9.8
+near = 0.1
+far = 120.0
+
+[node name="IluminacaoFosso" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="IluminacaoFosso"]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 4, 12, 8)
+light_color = Color(0.85, 0.88, 0.96, 1)
+light_energy = 1.05
+shadow_enabled = true
+
+[node name="LuzCaldeiraZonaA" type="OmniLight3D" parent="IluminacaoFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.8, 0.8)
+light_color = Color(1, 0.38, 0.12, 1)
+light_energy = 5.5
+omni_range = 16.0
+
+[node name="LuzDespachoZonaB" type="OmniLight3D" parent="IluminacaoFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.8, 1.2)
+light_color = Color(1, 0.62, 0.24, 1)
+light_energy = 4.8
+omni_range = 16.0
+
+[node name="LuzNetunoZonaC" type="OmniLight3D" parent="IluminacaoFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 5.2, -1.5)
+light_color = Color(0.32, 0.68, 1, 1)
+light_energy = 4.2
+omni_range = 18.0
+
+[node name="ArquiteturaFosso" type="Node3D" parent="."]
+
+[node name="PisoPrincipalGrelha" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.25, 0)
+mesh = SubResource("BoxMesh_MainFloor")
+surface_material_override/0 = SubResource("Mat_FloorGrate")
+
+[node name="AbismoBasaltoInferior" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3.5, -4.8)
+mesh = SubResource("BoxMesh_RockBackdrop")
+surface_material_override/0 = SubResource("Mat_RockFault")
+
+[node name="ParedeZonaA_Caldeiras" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -4.4)
+mesh = SubResource("BoxMesh_BackWallA")
+surface_material_override/0 = SubResource("Mat_WallRust")
+
+[node name="ParedeZonaB_Despacho" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -4.4)
+mesh = SubResource("BoxMesh_BackWallB")
+surface_material_override/0 = SubResource("Mat_WallRust")
+
+[node name="PassarelaSuperiorPhantom" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.2, -1.6)
+mesh = SubResource("BoxMesh_Catwalk")
+surface_material_override/0 = SubResource("Mat_BeamHazard")
+
+[node name="FrestaFaceVoltada_Netuno48" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 5.8, -11.5)
+mesh = SubResource("QuadMesh_Skybox")
+surface_material_override/0 = SubResource("Mat_SkyboxVista")
+
+[node name="Pilar_01" parent="ArquiteturaFosso" instance=ExtResource("44_pillar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -3.5)
+
+[node name="Pilar_02" parent="ArquiteturaFosso" instance=ExtResource("44_pillar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.5)
+
+[node name="Pilar_03" parent="ArquiteturaFosso" instance=ExtResource("44_pillar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -3.5)
+
+[node name="Pilar_04" parent="ArquiteturaFosso" instance=ExtResource("44_pillar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -3.5)
+
+[node name="HeatShimmer_ZonaA" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.6, -2.5)
+mesh = SubResource("QuadMesh_HeatPlane")
+surface_material_override/0 = SubResource("ShaderMaterial_heat")
+
+[node name="HeatShimmer_ZonaC" type="MeshInstance3D" parent="ArquiteturaFosso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.6, -2.2)
+mesh = SubResource("QuadMesh_HeatPlane")
+surface_material_override/0 = SubResource("ShaderMaterial_heat")
+
+[node name="DecalquesDeLore" type="Node3D" parent="."]
+
+[node name="DecalRelogio23Anos" type="Sprite3D" parent="DecalquesDeLore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.2, -4.05)
+pixel_size = 0.0045
+texture = ExtResource("25_dec23")
+
+[node name="DecalEtiquetaSouza" type="Sprite3D" parent="DecalquesDeLore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.6, -4.05)
+pixel_size = 0.0035
+texture = ExtResource("26_deccota")
+
+[node name="DecalValvulaNum14_TopoPhantom" type="Sprite3D" parent="DecalquesDeLore"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.5, 2.43, -0.5)
+pixel_size = 0.003
+texture = ExtResource("27_dec14")
+
+[node name="Interativos" type="Node3D" parent="."]
+
+[node name="LinhaViva_ZonaA" parent="Interativos" instance=ExtResource("36_live")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.2, -3.4)
+
+[node name="Manometro140_Estacao14" parent="Interativos" instance=ExtResource("37_gauge")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -12, 2.2, -2.85)
+
+[node name="PortaChumbo10t" parent="Interativos" instance=ExtResource("34_door")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="TerminalOmniCripto" parent="Interativos" instance=ExtResource("38_term")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0.4, 0, -2.2)
+
+[node name="ConteinerAcumuladores" parent="Interativos" instance=ExtResource("39_cont")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+
+[node name="CanhaoEscoria_Rack" parent="Interativos" instance=ExtResource("42_gun")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -14.8, 1.1, -2.4)
+
+[node name="LinhaViva_ZonaC_1" parent="Interativos" instance=ExtResource("36_live")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.1, -2.8)
+
+[node name="LinhaViva_ZonaC_2" parent="Interativos" instance=ExtResource("36_live")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.1, -2.8)
+
+[node name="NucleoTermicoDrop" parent="Interativos" instance=ExtResource("43_core")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 13.5, 0.1, 0.5)
+
+[node name="ThermalNode" type="Node" parent="Interativos/NucleoTermicoDrop"]
+script = ExtResource("3_thermal")
+
+[node name="DutoSangria" parent="Interativos" instance=ExtResource("40_chute")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -1.8)
+
+[node name="ValvulaMestra14" parent="Interativos" instance=ExtResource("35_valv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, -0.5)
+
+[node name="Operadores" type="Node3D" parent="."]
+
+[node name="Goliath_3D" parent="Operadores" instance=ExtResource("28_gol")]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, -14, 0, 0.4)
+
+[node name="Phantom_3D" parent="Operadores" instance=ExtResource("29_pha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.375, -1.6)
+
+[node name="Cipher_3D" parent="Operadores" instance=ExtResource("30_cip")]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -1.2, 0, -0.8)
+
+[node name="AuxiliarMacaco_3D" parent="Operadores" instance=ExtResource("31_mac")]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.8, 0, 1.1)
+
+[node name="AuxiliarPipa_3D" parent="Operadores" instance=ExtResource("32_pip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 4.9, -0.6)
+
+[node name="AuxiliarCartucho_3D" parent="Operadores" instance=ExtResource("33_car")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0, 0, -2.0)
+
+[node name="Inimigos" type="Node3D" parent="."]
+
+[node name="EsquadraContencao_01" parent="Inimigos" instance=ExtResource("41_enemy")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 15.2, 0, 0.2)
+
+[node name="EsquadraContencao_02" parent="Inimigos" instance=ExtResource("41_enemy")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 19.2, 0, 1.2)
+
+[node name="VisionHUD" type="CanvasLayer" parent="."]
+
+[node name="GoliathThermalFX" type="ColorRect" parent="VisionHUD"]
+material = SubResource("ShaderMaterial_goliath")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PhantomOpticFX" type="ColorRect" parent="VisionHUD"]
+visible = false
+material = SubResource("ShaderMaterial_phantom")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PhantomReticleOverlay" type="TextureRect" parent="VisionHUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_ret")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CipherNetFX" type="ColorRect" parent="VisionHUD"]
+visible = false
+material = SubResource("ShaderMaterial_cipher")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OverrideTerminalOverlay" type="Control" parent="VisionHUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TerminalFrameRect" type="TextureRect" parent="VisionHUD/OverrideTerminalOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ovr")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopHUD" type="PanelContainer" parent="VisionHUD"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 86.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="VisionHUD/TopHUD"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="VisionHUD/TopHUD/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ZonaLabel" type="Label" parent="VisionHUD/TopHUD/Margin/VBox"]
+modulate = Color(1, 0.72, 0.28, 1)
+layout_mode = 2
+text = "QUEST 1 · ESTAÇÃO DE VÁLVULA 14  |  ZONA A · CASA DE CALDEIRAS"
+
+[node name="ObjetivosLabel" type="Label" parent="VisionHUD/TopHUD/Margin/VBox"]
+layout_mode = 2
+text = "PRIMÁRIOS: [ ] Abrir Câmara 10t   [ ] Despachar Contêiner   [ ] Abrir Válvula 14"
+
+[node name="BottomHUD" type="PanelContainer" parent="VisionHUD"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -124.0
+offset_right = -20.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="VisionHUD/BottomHUD"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="VisionHUD/BottomHUD/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RadioLogLabel" type="Label" parent="VisionHUD/BottomHUD/Margin/VBox"]
+modulate = Color(1, 0.85, 0.45, 1)
+layout_mode = 2
+autowrap_mode = 3
+text = "[CANDEIA · RÁDIO]: Briefing..."
+
+[node name="PromptLabel" type="Label" parent="VisionHUD/BottomHUD/Margin/VBox"]
+modulate = Color(0.75, 0.92, 1, 1)
+layout_mode = 2
+text = "[A/D] Mover  |  [1] Goliath  [2] Phantom  [3] Cipher  [O] Override  |  [E] Interagir  |  [F] Disparar Therma-Tek"
+
+[node name="MetersRow" type="HBoxContainer" parent="VisionHUD/BottomHUD/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ArmaLbl" type="Label" parent="VisionHUD/BottomHUD/Margin/VBox/MetersRow"]
+modulate = Color(1, 0.5, 0.2, 1)
+layout_mode = 2
+text = "CALOR ARMA THERMA-TEK:"
+
+[node name="ArmaCalorBar" type="ProgressBar" parent="VisionHUD/BottomHUD/Margin/VBox/MetersRow"]
+custom_minimum_size = Vector2(240, 18)
+layout_mode = 2
+value = 18.0
+
+[node name="NucleoLbl" type="Label" parent="VisionHUD/BottomHUD/Margin/VBox/MetersRow"]
+modulate = Color(1, 0.8, 0.25, 1)
+layout_mode = 2
+text = "CARGA NÚCLEO TÉRMICO:"
+
+[node name="NucleoCargaBar" type="ProgressBar" parent="VisionHUD/BottomHUD/Margin/VBox/MetersRow"]
+custom_minimum_size = Vector2(240, 18)
+layout_mode = 2
+value = 100.0

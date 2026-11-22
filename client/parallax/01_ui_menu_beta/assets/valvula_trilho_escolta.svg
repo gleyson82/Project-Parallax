@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Trilho Magnético (Missão de Escolta / Transporte) -->
+  <g fill="none" stroke="#00E5FF" stroke-width="8">
+    <!-- Trilho Cilíndrico Central -->
+    <line x1="20" y1="96" x2="236" y2="96" stroke="#455364" stroke-width="14"/>
+    <line x1="20" y1="160" x2="236" y2="160" stroke="#455364" stroke-width="14"/>
+    <!-- Fixadores Magnéticos Abraçados ao Trilho -->
+    <polygon points="64,64 192,64 212,128 192,192 64,192 44,128" fill="#121820" stroke="#00E5FF" stroke-width="8"/>
+    <circle cx="92" cy="128" r="12" fill="#00E5FF"/>
+    <circle cx="164" cy="128" r="12" fill="#00E5FF"/>
+  </g>
+</svg>

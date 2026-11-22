@@ -1,0 +1,6 @@
+{
+  "name": "daedalus-parallax",
+  "version": "1.0.0",
+  "description": "Plugin oficial do Project Daedalus & PARALLAX para o Google Antigravity: inclui servidores MCP (Godot 4, Blender, Filesystem), regras e skills do estúdio HTL Games.",
+  "author": "HTL Games"
+}

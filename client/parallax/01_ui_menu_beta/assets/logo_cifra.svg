@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Emblema da Resistência: A CIFRA (Paralaxe e Deslocamento) -->
+  <g fill="none" stroke="#F5F7FA" stroke-width="14" stroke-linecap="square">
+    <!-- Duas Barras Paralelas Deslocadas -->
+    <line x1="48" y1="92" x2="184" y2="92"/>
+    <line x1="72" y1="164" x2="208" y2="164"/>
+    <!-- Linha de Visada / Ângulo de Paralaxe Cortando as Barras -->
+    <line x1="88" y1="216" x2="168" y2="40" stroke="#FFB300" stroke-width="12"/>
+  </g>
+</svg>

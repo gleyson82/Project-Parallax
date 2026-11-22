@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Placa numerica no topo da Valvula Mestra 14 (visivel apenas de cima pelo Olhar do Phantom) -->
+  <rect x="12" y="12" width="232" height="232" rx="8" fill="#14181F" stroke="#00E5FF" stroke-width="5"/>
+  <!-- Bordas com fuligem -->
+  <rect x="24" y="24" width="208" height="208" fill="#1B2028" stroke="#36424F" stroke-width="3"/>
+  <!-- Numero 14 em paths estencil puros -->
+  <g fill="#E2F7FF">
+    <!-- 1 -->
+    <path d="M58,80 L88,54 H108 V196 H82 V88 L64,102 Z"/>
+    <!-- 4 -->
+    <path d="M126,144 L172,54 H198 V144 H214 V166 H198 V196 H172 V166 H126 Z M172,144 V92 L148,144 Z"/>
+  </g>
+  <!-- Marcacao de direcao de sangria -->
+  <polygon points="128,28 142,46 114,46" fill="#FFB300"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Emblema Corporativo: KINESYS AEROSPACIAL (Gelo e Agilidade) -->
+  <g fill="none" stroke="#00E5FF" stroke-width="8" stroke-linejoin="miter">
+    <!-- Asa Orbital Geométrica -->
+    <polygon points="128,20 232,188 176,188 128,108 80,188 24,188" fill="#0B1922" stroke="#00E5FF" stroke-width="8"/>
+    <!-- Cristal de Nitrogênio Central -->
+    <polygon points="128,48 156,140 128,236 100,140" fill="#00E5FF" stroke="#E0F7FA" stroke-width="4"/>
+  </g>
+</svg>

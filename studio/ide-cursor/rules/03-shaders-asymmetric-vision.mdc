@@ -1,0 +1,18 @@
+---
+description: "Regras para Shaders (.gdshader) dos 3 Olhares Assimétricos e UI do Quadro de Válvulas em PARALLAX."
+globs: "**/*.gdshader"
+alwaysApply: false
+---
+
+# Shaders e Visão Assimétrica — PARALLAX
+
+1. **Os 3 Olhares de Classe (Pós-Processamento / Material Overlay):**
+   - **Goliath (`goliath_thermal.gdshader`):** Realça calor em vermelho-ferrugem/laranja, destaca tensão estrutural e ondas de vibração sísmica no piso.
+   - **Phantom (`phantom_optic.gdshader`):** Realça contornos em ciano-gelo (`#00E5FF`) para pontos de arpêu, rotas altas e números gravados no teto.
+   - **Cipher (`cipher_net.gdshader`):** Desatura o cenário físico, renderiza linhas de fluxo de dados entre terminais e travas e aplica o **Tremor Vermelho** de glitch quando `leak_count >= 3` (relíquia `Código-Fonte Ômega`).
+
+2. **Relíquia `Lágrima do Leviatã`:**
+   - Material de cristal de nitrogênio puro: `cast_shadow = shadow_casting_setting_off`, refração limpa sem reflexo metálico.
+
+3. **Desempenho (Meta Steam Deck 60 FPS):**
+   - Evite loops pesados por fragmento; use uniformes globais (`global uniform float sector_temperature`) atualizados pelo `ThermalNode`.

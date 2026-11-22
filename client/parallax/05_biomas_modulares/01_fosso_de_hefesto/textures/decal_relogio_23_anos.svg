@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Relogio dos Foguistas (23 ANOS) riscado a prego na chapa de caldeira da Estacao 14 -->
+  <rect x="8" y="8" width="496" height="240" rx="6" fill="#1C100C" stroke="#5A2312" stroke-width="6"/>
+  <!-- Marcas de fuligem e arranhoes industriais -->
+  <g stroke="#3F1A10" stroke-width="2" stroke-opacity="0.7">
+    <line x1="24" y1="36" x2="488" y2="30"/>
+    <line x1="24" y1="224" x2="488" y2="218"/>
+    <line x1="360" y1="20" x2="470" y2="85"/>
+  </g>
+  <!-- Digitos 2 3 riscados fundo no metal com prego (brilho metalico exposto) -->
+  <g fill="none" stroke="#E8C27A" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- 2 -->
+    <path d="M74,78 L108,52 H164 L172,88 L74,174 H178"/>
+    <!-- 3 -->
+    <path d="M216,56 H300 L254,108 H302 L308,154 L274,176 H212"/>
+  </g>
+  <!-- Arranhao duplo de enfase por baixo -->
+  <g fill="none" stroke="#D94E1F" stroke-width="6" stroke-linecap="round">
+    <path d="M62,196 L326,188"/>
+    <path d="M68,208 L314,202"/>
+  </g>
+  <!-- Rabisco "ANOS" a prego -->
+  <g fill="none" stroke="#CFA968" stroke-width="6" stroke-linecap="square">
+    <!-- A -->
+    <path d="M356,168 L372,118 L388,168 M361,150 H383"/>
+    <!-- N -->
+    <path d="M400,168 V118 L426,168 V118"/>
+    <!-- O -->
+    <path d="M438,118 H462 V168 H438 Z"/>
+    <!-- S -->
+    <path d="M492,120 H472 V142 H492 V168 H470"/>
+  </g>
+</svg>

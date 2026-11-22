@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "daedalus-filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/opt/Project-Daedalus"
+      ]
+    },
+    "godot-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@coding-solo/godot-mcp"
+      ],
+      "env": {
+        "GODOT_PATH": "C:/opt/Godot_v4.6.2-stable_mono_win64/Godot_v4.6.2-stable_mono_win64/Godot_v4.6.2-stable_mono_win64_console.exe",
+        "GODOT_PROJECT_PATH": "C:/opt/Project-Daedalus/client/parallax"
+      }
+    },
+    "blender-mcp": {
+      "command": "uvx",
+      "args": [
+        "blender-mcp"
+      ]
+    },
+    "comfyui": {
+      "command": "C:\\ComfyUI\\venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\ComfyUI\\mcp_server.py"
+      ],
+      "env": {
+        "COMFYUI_URL": "http://127.0.0.1:8188",
+        "COMFYUI_OUTPUT_DIR": "C:\\ComfyUI\\output_ide"
+      }
+    }
+  }
+}

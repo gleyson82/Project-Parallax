@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 84" width="280" height="84">
+  <!-- Relogio do Sindicato do Apice (140 ANOS - Nixie Violeta Limpo) -->
+  <polygon points="10,4 270,4 276,10 276,74 270,80 10,80 4,74 4,10" fill="#0F0D18" stroke="#8C6EFF" stroke-width="2.5"/>
+  <rect x="12" y="12" width="256" height="60" fill="#171226" stroke="#3E2D6B" stroke-width="1.5"/>
+  <!-- Linhas sutis de grade holografica -->
+  <g stroke="#B388FF" stroke-opacity="0.14" stroke-width="1">
+    <line x1="12" y1="27" x2="268" y2="27"/>
+    <line x1="12" y1="42" x2="268" y2="42"/>
+    <line x1="12" y1="57" x2="268" y2="57"/>
+  </g>
+  <!-- Cabecalho tecnico -->
+  <rect x="18" y="16" width="8" height="8" fill="#B388FF"/>
+  <path d="M32,20 H148" stroke="#7E57C2" stroke-width="1.5"/>
+  <text x="34" y="25" font-family="Consolas, monospace" font-size="11" fill="#C9B2FF" letter-spacing="1.5">SINDICATO // OFICIAL</text>
+  <!-- Digitos 1 4 0 em estilo Nixie vetorial puro -->
+  <g fill="none" stroke="#D1B3FF" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- 1 -->
+    <path d="M36,36 L44,32 V64 M34,64 H54"/>
+    <!-- 4 -->
+    <path d="M74,32 V50 H96 M92,32 V64"/>
+    <!-- 0 -->
+    <path d="M114,32 H136 V64 H114 Z M118,58 L132,38" stroke-width="4"/>
+  </g>
+  <text x="156" y="56" font-family="Consolas, monospace" font-size="18" font-weight="bold" fill="#B388FF" letter-spacing="2">ANOS</text>
+  <text x="156" y="68" font-family="Consolas, monospace" font-size="9" fill="#7E57C2">LIMITE DE ROCHE</text>
+</svg>

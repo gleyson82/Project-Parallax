@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Válvula em Cruz Vermelha (Incursão de Sangria) -->
+  <g fill="#C83214" stroke="#FFB300" stroke-width="6" stroke-linejoin="bevel">
+    <polygon points="104,20 152,20 160,44 144,44 144,112 212,112 212,96 236,104 236,152 212,160 212,144 144,144 144,212 160,212 152,236 104,236 96,212 112,212 112,144 44,144 44,160 20,152 20,104 44,96 44,112 112,112 112,44 96,44"/>
+    <circle cx="128" cy="128" r="24" fill="#181C22" stroke="#FFB300" stroke-width="6"/>
+  </g>
+</svg>

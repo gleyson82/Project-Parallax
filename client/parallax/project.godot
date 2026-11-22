@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="PARALLAX: Co-op Infiltration"
+config/description="Ação tática 2.5D cooperativa com puzzles assimétricos em Tritão (HTL Games)."
+config/version="0.1.0-beta"
+run/main_scene="res://01_ui_menu_beta/scenes/MainMenuSalaDeMaquinas.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="PARALLAX- Co-op Infiltration"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/func_godot/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+3d/default_gravity=7.79

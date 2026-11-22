@@ -1,0 +1,69 @@
+// Game: Generic
+// Format: Valve
+// Mapa Brutalista — Quest 1: Calor de Contrabando (Estação de Válvula 14, Fosso de Hefesto)
+// Escala TrenchBroom -> FuncGodot: 32 units = 1 metro (X: -576..+832 => -18m..+26m)
+{
+"classname" "worldspawn"
+"biome_id" "fosso_de_hefesto"
+"ambient_kelvin" "315.0"
+// Brush 0: Piso Principal da Estação 14 (-18m a +26m, largura 10m)
+{
+( -576 -160 0 ) ( -576 160 0 ) ( 832 160 0 ) fosso_floor_grate [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -576 160 -32 ) ( -576 -160 -32 ) ( 832 -160 -32 ) fosso_rock_fault [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -576 -160 -32 ) ( -576 160 -32 ) ( -576 160 0 ) fosso_wall_rust [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 832 160 -32 ) ( 832 -160 -32 ) ( 832 -160 0 ) fosso_wall_rust [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -576 160 -32 ) ( 832 160 -32 ) ( 832 160 0 ) fosso_beam_hazard [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 832 -160 -32 ) ( -576 -160 -32 ) ( -576 -160 0 ) fosso_beam_hazard [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// Brush 1: Parede Traseira Zona A - Casa de Caldeiras (-18m a -4m, altura 8m)
+{
+( -576 144 256 ) ( -576 176 256 ) ( -128 176 256 ) fosso_wall_rust [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -576 176 0 ) ( -576 144 0 ) ( -128 144 0 ) fosso_wall_rust [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -576 144 0 ) ( -576 176 0 ) ( -576 176 256 ) fosso_wall_rust [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -128 176 0 ) ( -128 144 0 ) ( -128 144 256 ) fosso_wall_rust [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -576 176 0 ) ( -128 176 0 ) ( -128 176 256 ) fosso_wall_rust [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -128 144 0 ) ( -576 144 0 ) ( -576 144 256 ) fosso_wall_rust [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// Brush 2: Passarela Superior do Phantom sobre Zona A e B (-12m a +12m, altura 4.2m)
+{
+( -384 32 144 ) ( -384 128 144 ) ( 384 128 144 ) fosso_floor_grate [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -384 128 132 ) ( -384 32 132 ) ( 384 32 132 ) fosso_beam_hazard [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -384 32 132 ) ( -384 128 132 ) ( -384 128 144 ) fosso_beam_hazard [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 384 128 132 ) ( 384 32 132 ) ( 384 32 144 ) fosso_beam_hazard [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -384 128 132 ) ( 384 128 132 ) ( 384 128 144 ) fosso_beam_hazard [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 384 32 132 ) ( -384 32 132 ) ( -384 32 144 ) fosso_beam_hazard [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+{
+"classname" "info_lore_gauge_140"
+"origin" "-384 120 64"
+"fragment_id" "manometro-da-estacao-14"
+}
+{
+"classname" "info_lore_clock_23"
+"origin" "-256 128 72"
+"years_remaining" "23"
+}
+{
+"classname" "info_lore_quota_tag"
+"origin" "-192 120 48"
+"fragment_id" "etiqueta-de-cota"
+}
+{
+"classname" "func_valve_thermatek"
+"origin" "640 16 0"
+"valve_number" "14"
+"pressure_pct" "140.0"
+"circuit_id" "SANGRIA_SETOR_7_BAIXO"
+}
+{
+"classname" "func_sangria_chute"
+"origin" "512 48 0"
+"target_sector" "Setor 7-Baixo"
+}
+{
+"classname" "info_spawn_contencao"
+"origin" "416 0 0"
+"wave_index" "1"
+"respects_live_line" "1"
+}

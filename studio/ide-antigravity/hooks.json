@@ -1,0 +1,17 @@
+{
+  "daedalus-post-edit": {
+    "enabled": true,
+    "PostToolUse": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --no-project python ../studio/scripts/agy_post_tool_hook.py",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

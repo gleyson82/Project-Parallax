@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 128" width="880" height="128">
+  <!-- Camada B (Recorte Termico Desalinhado - desliza 12px ate travar sobre a Camada A) -->
+  <!-- Moldura tracejada em vermelho-ferrugem (#D94E1F) -->
+  <polygon points="20,6 860,6 874,20 874,108 860,122 20,122 6,108 6,20" fill="none" stroke="#D94E1F" stroke-width="2.5" stroke-dasharray="18 8"/>
+
+  <!-- Recorte vazado em amarelo-enxofre (#FFB300) nas mesmas coordenadas exatas da Camada A -->
+  <g fill="none" stroke="#FFB300" stroke-width="3" stroke-linejoin="miter">
+    <!-- P -->
+    <path d="M66,24 H124 L140,40 V58 L124,74 H86 V104 H66 Z M86,40 V58 H118 L120,56 V42 L118,40 Z"/>
+    <!-- A -->
+    <path d="M180,24 H210 L234,104 H212 L206,82 H184 L178,104 H156 Z M188,66 H202 L195,40 Z"/>
+    <!-- R -->
+    <path d="M250,24 H310 L326,40 V56 L312,70 L328,104 H305 L291,74 H270 V104 H250 Z M270,40 V58 H304 L306,56 V42 L304,40 Z"/>
+    <!-- A -->
+    <path d="M366,24 H396 L420,104 H398 L392,82 H370 L364,104 H342 Z M374,66 H388 L381,40 Z"/>
+    <!-- L -->
+    <path d="M438,24 H458 V86 H504 V104 H438 Z"/>
+    <!-- L -->
+    <path d="M522,24 H542 V86 H588 V104 H522 Z"/>
+    <!-- A -->
+    <path d="M604,104 L628,24 H658 L682,104 H660 L654,82 H632 L626,104 Z M636,66 H650 L643,40 Z"/>
+    <!-- X -->
+    <path d="M698,24 H722 L741,53 L760,24 H784 L754,64 L786,104 H762 L741,74 L720,104 H696 L728,64 Z"/>
+  </g>
+
+  <!-- Linha de alinhamento termico central (brilha ao travar) -->
+  <line x1="56" y1="64" x2="824" y2="64" stroke="#D94E1F" stroke-width="3" stroke-opacity="0.85"/>
+  <polygon points="44,64 56,58 56,70" fill="#FFB300"/>
+  <polygon points="836,64 824,58 824,70" fill="#FFB300"/>
+</svg>

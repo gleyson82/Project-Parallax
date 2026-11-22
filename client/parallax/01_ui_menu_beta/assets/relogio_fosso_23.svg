@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 84" width="280" height="84">
+  <!-- Relogio dos Foguistas (23 ANOS - Chapa de caldeira enferrujada riscada a prego) -->
+  <polygon points="8,4 272,4 276,8 276,76 272,80 8,80 4,76 4,8" fill="#1F120E" stroke="#A83214" stroke-width="2.5"/>
+  <rect x="12" y="12" width="256" height="60" fill="#2A1711" stroke="#6E2411" stroke-width="1.5"/>
+  <!-- Marcas de arranhoes de prego na chapa -->
+  <g stroke="#5E2918" stroke-width="1.2">
+    <line x1="18" y1="68" x2="262" y2="66"/>
+    <line x1="196" y1="16" x2="240" y2="34"/>
+  </g>
+  <text x="20" y="24" font-family="Consolas, monospace" font-size="11" fill="#FF8A65" letter-spacing="1.5">FOSSO // ESTAÇÃO 14</text>
+  <!-- Digitos 2 3 riscados a prego fundo na chapa -->
+  <g fill="none" stroke="#FFB300" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- 2 -->
+    <path d="M40,38 L48,33 H64 L66,42 L40,63 H68"/>
+    <!-- 3 -->
+    <path d="M84,34 H106 L94,47 H106 L108,58 L98,64 H82"/>
+  </g>
+  <!-- Risco duplo de urgencia abaixo de 23 -->
+  <path d="M36,68 L112,66 M38,71 L108,70" stroke="#FF5722" stroke-width="2"/>
+  <text x="134" y="54" font-family="Consolas, monospace" font-size="18" font-weight="bold" fill="#FF5722" letter-spacing="2">ANOS</text>
+  <text x="134" y="67" font-family="Consolas, monospace" font-size="9" fill="#FFAB91">PRESSÃO 140%</text>
+</svg>

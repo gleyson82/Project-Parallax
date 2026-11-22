@@ -1,0 +1,33 @@
+---
+description: "Regras de escrita e validação de Lore, Fragmentos In-World, Quests e Raids do vault Obsidian de PARALLAX."
+globs: "jogos/parallax/**/*.md"
+alwaysApply: false
+---
+
+# Regras de Lore e Vault Obsidian — PARALLAX
+
+Ao criar ou editar qualquer arquivo dentro de `jogos/parallax/`:
+
+1. **Frontmatter YAML Obrigatório:**
+   Todo arquivo (exceto `blueprint-de-investimento.md`) deve abrir com:
+   ```yaml
+   ---
+   jogo: parallax
+   tipo: <fundacao|cosmologia|historia|sociedade|misterio|termo|faccao|classe|auxiliar|item|bioma|transporte|quest|raid|encontro|interface|pessoa|fragmento|fio|verdade>
+   status: <vazia|semente|hipótese|cânone|isca>
+   camada: <base|live|restrito>
+   liga: ["[[arquivo-relacionado]]"]
+   ---
+   ```
+   Em `jogos/parallax/fragmentos/{goliath,phantom,cipher}/`, inclua também `olhar: <goliath|phantom|cipher>`.
+
+2. **Proteção da Pasta `restrito/`:**
+   Arquivos em `jogos/parallax/restrito/` contêm as verdades internas dos 3 Fios Soltos e dos Três Relógios. **Nunca** exponha essas respostas em arquivos de `fragmentos/`, `quests/`, `raids/` ou `interface/`.
+
+3. **Física Canônica de Tritão:**
+   - O núcleo de Tritão tem **excesso de calor** por atrito de maré (`140%` nos manômetros); a escassez pública é mentira política do Sindicato.
+   - Tritão tem rotação síncrona: **Face Voltada** (Netuno fixo no céu, Fosso de Hefesto) e **Face Cega** (estrelas sem Netuno, Krios-Prime e Agulha do Zênite).
+   - A **Doença da Maré** é indução eletromagnética da magnetosfera inclinada de Netuno (ciclo exato de 16 horas).
+
+4. **Validação Pós-Edição:**
+   Após salvar qualquer nota, execute `python3 studio/scripts/validate_daedalus.py` no terminal para garantir 0 wikilinks quebrados.

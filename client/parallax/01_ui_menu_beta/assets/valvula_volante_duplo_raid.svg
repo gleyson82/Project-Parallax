@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Volante Duplo (Raid Node - Quadro de Válvulas) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Anel Externo com 6 Travas de Alta Pressão -->
+    <circle cx="128" cy="128" r="106" stroke="#D94E1F" stroke-width="18" stroke-dasharray="36 19"/>
+    <circle cx="128" cy="128" r="92" stroke="#FFB300" stroke-width="6"/>
+    <!-- Anel Interno Concêntrico -->
+    <circle cx="128" cy="128" r="62" stroke="#D8E2EC" stroke-width="12"/>
+    <!-- 6 Raios Pesados -->
+    <line x1="128" y1="22" x2="128" y2="234" stroke="#D8E2EC" stroke-width="8"/>
+    <line x1="36" y1="75" x2="220" y2="181" stroke="#D8E2EC" stroke-width="8"/>
+    <line x1="36" y1="181" x2="220" y2="75" stroke="#D8E2EC" stroke-width="8"/>
+    <!-- Núcleo do Reator -->
+    <circle cx="128" cy="128" r="28" fill="#181C22" stroke="#D94E1F" stroke-width="8"/>
+    <circle cx="128" cy="128" r="10" fill="#FFB300"/>
+  </g>
+</svg>

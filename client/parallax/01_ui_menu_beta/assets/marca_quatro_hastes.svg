@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- A Marca de Quatro Hastes (Primeiros Colonos / Fio Solto 2 - Quarta Fechadura) -->
+  <g fill="none" stroke="#90A4AE" stroke-width="10" stroke-linecap="butt">
+    <!-- Quatro Hastes Verticais Assimétricas (gravadas a talhadeira) -->
+    <line x1="64" y1="68" x2="64" y2="176"/>
+    <line x1="106" y1="44" x2="106" y2="176"/>
+    <line x1="150" y1="56" x2="150" y2="176"/>
+    <line x1="192" y1="84" x2="192" y2="176"/>
+    <!-- Arco Orbital Retrógrado na Base -->
+    <path d="M44,168 A96,48 0 0,0 212,168" stroke="#CFD8DC" stroke-width="8"/>
+  </g>
+</svg>
