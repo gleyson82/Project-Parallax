@@ -1,6 +1,6 @@
 # Roteiro 06 — Arsenal das 3 Corporações e Relíquias de Grau-Zero
 
-**Destino de Exportação no Godot 4:** `client/parallax/03_classes_e_auxiliares/` (sockets de arma) e `07_vfx_e_hud_combate/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/Characters/` (sockets de arma), `client/parallax-unity/Assets/_Project/Art/Weapons/` e `client/parallax-unity/Assets/_Project/Art/VFX/`
 **Referências de Lore:** `armamento-therma-tek.md`, `armamento-kinesys.md`, `armamento-omni-cripto.md`, `coracao-de-hefesto.md`, `lagrima-do-leviata.md`, `codigo-fonte-omega.md`, `marca-de-quatro-hastes.md`
 
 ---
@@ -44,7 +44,7 @@
 Regra obrigatória de lore (`marca-de-quatro-hastes.md`): **Todas as três Relíquias possuem a Marca de Quatro Hastes gravada em um ponto oculto**.
 
 ### Relíquia 1 (Goliath): O Coração de Hefesto (`coracao-de-hefesto.md`)
-- **Ferramenta:** **Blender 4.x via Blender MCP** + Shader de Incandescência no Godot 4.
+- **Ferramenta:** **Blender 4.x via Blender MCP** + Shader de Incandescência na URP (HLSL ou Shader Graph).
 - **Formato de Saída:** `reliquia_coracao_de_hefesto.glb`.
 - **Prompt para o Agente via Blender MCP:**
   ```text
@@ -55,12 +55,12 @@ Regra obrigatória de lore (`marca-de-quatro-hastes.md`): **Todas as três Relí
   ```
 
 ### Relíquia 2 (Phantom): A Lágrima do Leviatã (`lagrima-do-leviata.md`)
-- **Ferramenta:** **Blender 4.x via Blender MCP** + Shader de Cristal sem Sombra (`cast_shadow = off`) no Godot 4.
-- **Formato de Saída:** `reliquia_lagrima_do_leviata.glb` + `leviata_crystal.gdshader`.
+- **Ferramenta:** **Blender 4.x via Blender MCP** + Shader de Cristal sem Sombra (`Cast Shadows: Off`) na URP.
+- **Formato de Saída:** `reliquia_lagrima_do_leviata.glb` + `Parallax/World/LeviataCrystal` (shader URP).
 - **Prompt para o Agente via Blender MCP & Shader:**
   ```text
   1. Via Blender MCP, modele o rifle sniper `reliquia_lagrima_do_leviata`: o corpo e o cano inteiro são esculpidos a partir de **um único cristal contínuo de nitrogênio facetado**, sem nenhum parafuso ou peça de metal tradicional. Sob o cano, esculpa internamente a **Marca de Quatro Hastes**.
-  2. No Godot 4, gere o shader `leviata_crystal.gdshader` com refração pura de vidro/gelo e configure o MeshInstance3D com `cast_shadow = SHADOW_CASTING_SETTING_OFF` (pois na lore a Lágrima do Leviatã não projeta sombra).
+  2. Na Unity, gere o shader `Parallax/World/LeviataCrystal` com refração pura de vidro/gelo e configure o MeshRenderer com `ShadowCastingMode.Off` (pois na lore a Lágrima do Leviatã não projeta sombra).
   ```
 
 ### Relíquia 3 (Cipher): O Código-Fonte Ômega (`codigo-fonte-omega.md`)

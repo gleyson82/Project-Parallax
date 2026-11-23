@@ -1,18 +1,23 @@
 ---
-description: "Regras para Shaders (.gdshader) dos 3 Olhares Assimétricos e UI do Quadro de Válvulas em PARALLAX."
-globs: "**/*.gdshader"
+description: "Shaders HLSL/Shader Graph da URP e a visão assimétrica dos 3 Olhares (Goliath, Phantom, Cipher) em PARALLAX."
+globs: "client/parallax-unity/**/*.{shader,hlsl,shadergraph,shadersubgraph,mat}"
 alwaysApply: false
 ---
 
-# Shaders e Visão Assimétrica — PARALLAX
+# Shaders e Visão Assimétrica — PARALLAX (URP 17.3)
 
-1. **Os 3 Olhares de Classe (Pós-Processamento / Material Overlay):**
-   - **Goliath (`goliath_thermal.gdshader`):** Realça calor em vermelho-ferrugem/laranja, destaca tensão estrutural e ondas de vibração sísmica no piso.
-   - **Phantom (`phantom_optic.gdshader`):** Realça contornos em ciano-gelo (`#00E5FF`) para pontos de arpêu, rotas altas e números gravados no teto.
-   - **Cipher (`cipher_net.gdshader`):** Desatura o cenário físico, renderiza linhas de fluxo de dados entre terminais e travas e aplica o **Tremor Vermelho** de glitch quando `leak_count >= 3` (relíquia `Código-Fonte Ômega`).
+1. **Um renderer por Olhar (`Assets/_Project/Settings/Rendering/Parallax_URP.asset`):**
+   - Índices: 0 Neutro (geada do Quadro), 1 Goliath, 2 Phantom, 3 Cipher. Cada renderer tem um **Full Screen Pass Renderer Feature** com o material do Olhar (`Art/Materials/Vision/`).
+   - A câmera local troca de renderer via `VisionController.SetViewer`. Nenhum jogador renderiza o Olhar de outro.
+   - Shaders de tela cheia incluem `Packages/com.unity.render-pipelines.core/Runtime/Utilities/Blit.hlsl`, usam `Vert` e leem `_BlitTexture`.
 
-2. **Relíquia `Lágrima do Leviatã`:**
-   - Material de cristal de nitrogênio puro: `cast_shadow = shadow_casting_setting_off`, refração limpa sem reflexo metálico.
+2. **Os 3 Olhares:**
+   - **Goliath (`Parallax/Vision/GoliathThermal`):** LUT térmico vermelho-ferrugem/laranja, ondas sísmicas da Batida (`_Parallax_SeismicPulse`) e vinheta superior do capacete.
+   - **Phantom (`Parallax/Vision/PhantomOptic`):** bordas Sobel em ciano-gelo `#00E5FF`, com foco no alto (arpéus, cabos, números no teto).
+   - **Cipher (`Parallax/Vision/CipherNet`):** mundo desaturado com a Pele de Rede em violeta, **Tremor Vermelho** com `_Parallax_LeakCount >= 3` (Código-Fonte Ômega) e **Override Cego** (`_Parallax_OverrideBlind`) trocando o mundo pelo terminal isolado.
 
-3. **Desempenho (Meta Steam Deck 60 FPS):**
-   - Evite loops pesados por fragmento; use uniformes globais (`global uniform float sector_temperature`) atualizados pelo `ThermalNode`.
+3. **Globais e estado:** só `ParallaxVisionState` escreve as globais `_Parallax_*`. Realces por objeto (perigo térmico, ponto de arpéu, nó de rede) usam Rendering Layers, e não tags.
+
+4. **Relíquia `Lágrima do Leviatã`:** `ShadowCastingMode.Off` e refração cristalina sem reflexo metálico.
+
+5. **Desempenho (Steam Deck 60 FPS):** no máximo 5 amostras de textura por pixel nos passes de tela cheia; sem loops por fragmento; variáveis globais em vez de material por objeto.

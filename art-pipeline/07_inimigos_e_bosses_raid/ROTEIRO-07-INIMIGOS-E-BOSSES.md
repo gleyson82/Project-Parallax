@@ -1,6 +1,6 @@
 # Roteiro 07 — Inimigos Corporativos, Autômatos da Ômega e Chefes de Raid
 
-**Destino de Exportação no Godot 4:** `client/parallax/06_inimigos_e_bosses/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/Enemies/`
 **Referências de Lore:** `esquadras-de-contencao.md`, `diretriz-omega.md`, `encontro-3-o-mestre-de-fornalha.md`, `encontro-4-o-coracao.md`, `encontro-3-ciclo-4113.md`
 
 ---

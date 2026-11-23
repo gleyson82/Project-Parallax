@@ -28,10 +28,17 @@ REQUIRED_YAML_KEYS = {"jogo", "tipo", "status", "camada", "liga"}
 EXEMPT_FRONTMATTER = {"blueprint-de-investimento.md"}
 
 
+def as_posix(path):
+    return path.replace(os.sep, "/")
+
+
+SKIPPED_DIRS = ("/.git", "/.agents", "/.cursor", "/studio/ide-", "/client/parallax-unity/Library", "/client/parallax-unity/Temp")
+
+
 def collect_markdown_files():
     md_files = {}
     for dirpath, _, filenames in os.walk(ROOT):
-        if "/.git" in dirpath or "/.agents" in dirpath or "/.cursor" in dirpath or "/studio/ide-" in dirpath:
+        if any(skipped in as_posix(dirpath) for skipped in SKIPPED_DIRS):
             continue
         for fname in filenames:
             if fname.endswith(".md"):
@@ -53,7 +60,7 @@ def validate():
             fpath = os.path.join(dirpath, fname)
             rel_path = os.path.relpath(fpath, ROOT)
             with open(fpath, "r", encoding="utf-8") as f:
-                content = f.read()
+                content = f.read().replace("\r\n", "\n")
 
             # 1. Check YAML frontmatter
             if fname not in EXEMPT_FRONTMATTER:
@@ -79,7 +86,7 @@ def validate():
                 target = match.strip()
                 if target not in md_files:
                     errors.append(f"[WIKILINK QUEBRADO] {rel_path} -> [[{target}]]")
-                elif "/fragmentos/" in fpath and "verdade-" in target:
+                elif "/fragmentos/" in as_posix(fpath) and target.startswith("verdade-"):
                     errors.append(f"[VAZAMENTO RESTRITO EM FRAGMENTO] {rel_path} referencia [[{target}]]")
 
             # 3. Check PT-PT terms

@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-  Verifica e instala a pilha gratuita (US$ 0) de produção visual/3D de PARALLAX no Windows.
+  Verifica e instala a pilha gratuita (US$ 0) de produção de PARALLAX (Unity 6 LTS) no Windows.
 .DESCRIPTION
-  Executa auditoria das ferramentas no PATH e, com -Install, instala via winget:
-  Godot 4, Blender 4.x, Krita, Blockbench, Inkscape e Material Maker.
-  Também sincroniza o mcp_config.json para o diretório global do Antigravity (~/.gemini/config/mcp_config.json).
+  Audita as ferramentas no PATH e o Unity 6000.3 LTS com o módulo Windows IL2CPP. Com -Install, instala via
+  winget o que falta e, pelo Unity CLI, o editor LTS. Com -SyncMcp, zera o mcp_config.json global do Antigravity
+  (os MCPs ficam em .agents/plugins/daedalus-parallax/mcp_config.json).
 .EXAMPLE
   .\studio\scripts\setup_windows_pipeline.ps1
   .\studio\scripts\setup_windows_pipeline.ps1 -Install
@@ -16,37 +16,61 @@ param(
 )
 
 $ErrorActionPreference = "Continue"
+$UnityVersion = "6000.3.29f1"
+$UnityProject = Join-Path $PSScriptRoot "..\..\client\parallax-unity" | Resolve-Path -ErrorAction SilentlyContinue
 
 $tools = @(
-    @{ Name = "Godot Engine 4";  Cmd = "godot";          WingetId = "GodotEngine.GodotEngine";       RequiredFrom = "Módulo 01 (Agora)" },
-    @{ Name = "Blender 4.x";     Cmd = "blender";        WingetId = "BlenderFoundation.Blender";     RequiredFrom = "Módulo 03 (Rigs & Props)" },
-    @{ Name = "Blockbench";      Cmd = "blockbench";     WingetId = "JannisX11.Blockbench";          RequiredFrom = "Módulo 03 (Auxiliares)" },
-    @{ Name = "Krita";           Cmd = "krita";          WingetId = "KDE.Krita";                     RequiredFrom = "Módulo 01 (Paintover/UI)" },
-    @{ Name = "Inkscape";        Cmd = "inkscape";       WingetId = "Inkscape.Inkscape";             RequiredFrom = "Módulo 01 (SVGs)" },
-    @{ Name = "TrenchBroom";     Cmd = "trenchbroom";    WingetId = "TrenchBroom.TrenchBroom";       RequiredFrom = "Módulo 05 (Biomas)" },
-    @{ Name = "Material Maker";  Cmd = "material_maker"; WingetId = "RodZill4.MaterialMaker";        RequiredFrom = "Módulo 01/05 (Texturas PBR)" },
-    @{ Name = "Audacity";        Cmd = "audacity";       WingetId = "Audacity.Audacity";             RequiredFrom = "Módulo 08 (Áudio/Rádio)" },
-    @{ Name = "Obsidian";        Cmd = "obsidian";       WingetId = "Obsidian.Obsidian";             RequiredFrom = "Vault Project Daedalus" },
-    @{ Name = "Node.js";         Cmd = "node";           WingetId = "OpenJS.NodeJS.LTS";             RequiredFrom = "MCP Godot/Filesystem" },
-    @{ Name = "uv / uvx";        Cmd = "uvx";            WingetId = "astral-sh.uv";                  RequiredFrom = "MCP Blender" }
+    @{ Name = "Unity CLI";       Cmd = "unity";          WingetId = "Unity.UnityHub";                RequiredFrom = "Motor (Unity 6 LTS + MCP)" },
+    @{ Name = "Git LFS";         Cmd = "git-lfs";        WingetId = "GitHub.GitLFS";                 RequiredFrom = "Binários de arte e áudio" },
+    @{ Name = "Python 3";        Cmd = "python";         WingetId = "Python.Python.3.12";            RequiredFrom = "Validador e sync do Daedalus" },
+    @{ Name = "uv / uvx";        Cmd = "uvx";            WingetId = "astral-sh.uv";                  RequiredFrom = "Blender MCP e scripts" },
+    @{ Name = "Node.js";         Cmd = "node";           WingetId = "OpenJS.NodeJS.LTS";             RequiredFrom = "MCP Filesystem" },
+    @{ Name = "Blender 5.x";     Cmd = "blender";        WingetId = "BlenderFoundation.Blender";     RequiredFrom = "Modelagem, rigs e kits" },
+    @{ Name = "Blockbench";      Cmd = "blockbench";     WingetId = "JannisX11.Blockbench";          RequiredFrom = "Auxiliares e armas" },
+    @{ Name = "Krita";           Cmd = "krita";          WingetId = "KDE.Krita";                     RequiredFrom = "Paintover humano" },
+    @{ Name = "Inkscape";        Cmd = "inkscape";       WingetId = "Inkscape.Inkscape";             RequiredFrom = "UI vetorial" },
+    @{ Name = "Material Maker";  Cmd = "material_maker"; WingetId = "RodZill4.MaterialMaker";        RequiredFrom = "Texturas PBR" },
+    @{ Name = "Audacity";        Cmd = "audacity";       WingetId = "Audacity.Audacity";             RequiredFrom = "Rádio e áudio" },
+    @{ Name = "Obsidian";        Cmd = "obsidian";       WingetId = "Obsidian.Obsidian";             RequiredFrom = "Vault Project Daedalus" }
 )
 
-Write-Host "`n=== PARALLAX // AUDITORIA DO PIPELINE WINDOWS ===" -ForegroundColor Cyan
+$installDirs = @{
+    "blender"  = "C:\Program Files\Blender Foundation"
+    "krita"    = "C:\Program Files\Krita (x64)"
+    "inkscape" = "C:\Program Files\Inkscape"
+    "audacity" = "C:\Program Files\Audacity 4"
+    "blockbench" = "$env:LOCALAPPDATA\Programs\Blockbench"
+    "obsidian" = "$env:LOCALAPPDATA\Programs\Obsidian"
+}
+
+Write-Host "`n=== PARALLAX // AUDITORIA DO PIPELINE WINDOWS (UNITY 6 LTS) ===" -ForegroundColor Cyan
 foreach ($t in $tools) {
     $found = Get-Command $t.Cmd -ErrorAction SilentlyContinue
+    $dir = $installDirs[$t.Cmd]
     if ($found) {
-        Write-Host ("[OK]    {0,-18} -> {1}" -f $t.Name, $found.Source) -ForegroundColor Green
+        Write-Host ("[OK]    {0,-16} -> {1}" -f $t.Name, $found.Source) -ForegroundColor Green
+    } elseif ($dir -and (Test-Path $dir)) {
+        Write-Host ("[OK]    {0,-16} -> {1} (fora do PATH)" -f $t.Name, $dir) -ForegroundColor Green
     } else {
-        Write-Host ("[FALTA] {0,-18} ({1})  | winget id: {2}" -f $t.Name, $t.RequiredFrom, $t.WingetId) -ForegroundColor Yellow
+        Write-Host ("[FALTA] {0,-16} ({1}) | winget id: {2}" -f $t.Name, $t.RequiredFrom, $t.WingetId) -ForegroundColor Yellow
         if ($Install) {
-            Write-Host ("        Instalando {0} via winget..." -f $t.Name) -ForegroundColor Cyan
             winget install --id $t.WingetId -e --accept-package-agreements --accept-source-agreements
         }
     }
 }
 
-Write-Host "`n[NOTA] Material Maker (texturas PBR gratuitas) nao possui pacote oficial no winget:" -ForegroundColor DarkYellow
-Write-Host "       Baixe diretamente em: https://www.materialmaker.org/ (ou itch.io/rodzilla/material-maker)" -ForegroundColor Gray
+$editor = "C:\Program Files\Unity\Hub\Editor\$UnityVersion\Editor\Unity.exe"
+$il2cpp = "C:\Program Files\Unity\Hub\Editor\$UnityVersion\Editor\Data\PlaybackEngines\windowsstandalonesupport\Variations\win64_player_nondevelopment_il2cpp"
+if (Test-Path $editor) {
+    Write-Host ("[OK]    Unity {0}" -f $UnityVersion) -ForegroundColor Green
+} else {
+    Write-Host ("[FALTA] Unity {0} LTS" -f $UnityVersion) -ForegroundColor Yellow
+    if ($Install) { unity install $UnityVersion -m windows-il2cpp --accept-eula -y }
+}
+if ((Test-Path $editor) -and -not (Test-Path $il2cpp)) {
+    Write-Host "[FALTA] Módulo Windows Build Support (IL2CPP)" -ForegroundColor Yellow
+    if ($Install) { unity install-modules --editor-version $UnityVersion -m windows-il2cpp --accept-eula -y }
+}
 
 if ($SyncMcp) {
     $dstDir = Join-Path $env:USERPROFILE ".gemini\config"
@@ -56,7 +80,9 @@ if ($SyncMcp) {
     Write-Host "`n[OK] Duplicatas removidas de $dstMcp (MCPs concentrados em .agents/plugins/daedalus-parallax/mcp_config.json)" -ForegroundColor Green
 }
 
-Write-Host "`nProximos passos apos instalar:" -ForegroundColor Cyan
-Write-Host "1. Abrir c:\opt\Project-Daedalus\client\parallax\project.godot no Godot 4.4+ e rodar F5 (Menu Beta) + F2 (Lab 2.5D)."
-Write-Host "2. No Blender 4.x, instalar o addon 'blender-mcp' (Edit > Preferences > Add-ons) e clicar em 'Connect to Claude/MCP'."
-Write-Host "3. Executar '.\studio\scripts\setup_windows_pipeline.ps1 -SyncMcp' para registrar os caminhos Windows no Antigravity.`n"
+Write-Host "`nPróximos passos:" -ForegroundColor Cyan
+Write-Host "1. Abrir o projeto: unity open $UnityProject"
+Write-Host "2. Configurar (idempotente): menu Parallax/Bootstrap/Run Full Bootstrap."
+Write-Host "3. Testes: unity test --project-path $UnityProject"
+Write-Host "4. No Blender 5.x: ativar o addon 'Blender MCP' e clicar em Connect na barra lateral (N)."
+Write-Host "5. Lore: python studio/scripts/sync_daedalus.py e menu Parallax/Daedalus/Import Generated JSON.`n"

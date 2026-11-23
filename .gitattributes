@@ -1,0 +1,97 @@
+# Monorepo Project Daedalus + PARALLAX
+# Base: https://github.com/gitattributes/gitattributes/blob/master/Unity.gitattributes (MIT)
+
+[attr]lfs               filter=lfs diff=lfs merge=lfs -text
+[attr]unity-json        eol=lf linguist-language=json
+[attr]unity-yaml        merge=unityyamlmerge eol=lf linguist-language=yaml
+
+# Texto do vault, scripts e documentação
+*.md                    text eol=lf
+*.mdc                   text eol=lf
+*.py                    text eol=lf
+*.ps1                   text eol=crlf
+*.json                  text eol=lf
+*.csv                   text eol=lf
+
+# Código Unity
+*.cginc                 text
+*.compute               text linguist-language=hlsl
+*.cs                    text diff=csharp
+*.hlsl                  text linguist-language=hlsl
+*.shader                text
+
+# JSON da Unity
+*.asmdef                unity-json
+*.asmref                unity-json
+*.inputactions          unity-json
+*.shadergraph           unity-json
+*.shadersubgraph        unity-json
+
+# UI Toolkit
+*.tss                   text diff=css linguist-language=css
+*.uss                   text diff=css linguist-language=css
+*.uxml                  text linguist-language=xml linguist-detectable
+
+# YAML da Unity (Force Text)
+*.anim                  unity-yaml
+*.asset                 unity-yaml
+*.controller            unity-yaml
+*.lighting              unity-yaml
+*.mask                  unity-yaml
+*.mat                   unity-yaml
+*.meta                  unity-yaml
+*.mixer                 unity-yaml
+*.overrideController    unity-yaml
+*.playable              unity-yaml
+*.prefab                unity-yaml
+*.preset                unity-yaml
+*.renderTexture         unity-yaml
+*.scenetemplate         unity-yaml
+*.shadervariants        unity-yaml
+*.signal                unity-yaml
+*.spriteatlas           unity-yaml
+*.spriteatlasv2         unity-yaml
+*.terrainlayer          unity-yaml
+*.unity                 unity-yaml
+*.physicMaterial        unity-yaml
+
+Packages/packages-lock.json linguist-generated
+LightingData.asset      binary
+
+# SVG é texto (Inkscape)
+*.svg                   text eol=lf
+
+# --- LFS: binários de arte e áudio ---
+*.blend                 lfs
+*.fbx                   lfs
+*.FBX                   lfs
+*.glb                   lfs
+*.obj                   lfs
+*.bbmodel               lfs
+*.png                   lfs
+*.jpg                   lfs
+*.jpeg                  lfs
+*.tga                   lfs
+*.tif                   lfs
+*.tiff                  lfs
+*.psd                   lfs
+*.kra                   lfs
+*.exr                   lfs
+*.hdr                   lfs
+*.webp                  lfs
+*.aseprite              lfs
+*.wav                   lfs
+*.ogg                   lfs
+*.mp3                   lfs
+*.flac                  lfs
+*.vital                 lfs
+*.mp4                   lfs
+*.mov                   lfs
+*.ttf                   lfs
+*.otf                   lfs
+*.dll                   lfs
+*.so                    lfs
+*.zip                   lfs
+*.7z                    lfs
+*.pdf                   lfs
+*.cubemap               lfs

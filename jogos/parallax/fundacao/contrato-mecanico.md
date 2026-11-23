@@ -12,7 +12,7 @@ A mecânica dita. Esta sala lista o que a lore justifica.
 
 ## Restrições
 
-- Ação tática 2.5D (estilo Metal Slug) com raids cooperativas (estilo Destiny).
+- Ação tática 3D em terceira pessoa, com primeira pessoa contextual (leitura de manômetro, mira e terminal), e raids cooperativas (estilo Destiny). Ver [[0005-migracao-unity-3d]].
 - **De 1 a 3 jogadores na mesma sessão.** Ver [[escalabilidade-1-a-3]].
 - Três classes fixas: [[goliath]] (tanque), [[phantom]] (mobilidade), [[cipher]] (hacker). Sem duplicata na mesma sessão.
 - Puzzles assimétricos de **três leituras** e **três ações**. Cada classe lê uma parte e age em uma parte.

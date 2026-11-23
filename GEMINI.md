@@ -15,7 +15,7 @@ Aplique integralmente as regras de `AGENTS.md` (carregado automaticamente) somad
      para garantir zero wikilinks quebrados e zero termos em PT-PT.
 2. **Skills do Projeto (`.agents/skills/`):**
    - Ative `daedalus-lore-architect` sempre que criar ou revisar lore, facções, biomas, quests, raids ou fragmentos in-world.
-   - Ative `parallax-godot-engineer` sempre que gerar cenas `.tscn`, scripts `.gd`, shaders `.gdshader` ou lógica de rede GodotSteam.
-   - Ative `parallax-asset-pipeline` sempre que automatizar **Blender MCP** (`mcp-for-blender` v2), **ComfyUI MCP**, TrenchBroom/FuncGodot, áudio (`BeatSequencer`) ou exportação JSON do Daedalus.
+   - Ative `parallax-unity-engineer` sempre que escrever C#, cenas, prefabs, ScriptableObjects, shaders URP ou lógica de rede (NGO + Steam) em `client/parallax-unity/`.
+   - Ative `parallax-asset-pipeline` sempre que automatizar **Blender MCP**, **ComfyUI MCP**, ProBuilder, texturas do Material Maker, áudio (`BeatSequencer`) ou a exportação do Daedalus para a Unity.
 3. **Servidores MCP (Fonte Única no Plugin Local):**
-   - Os servidores MCP do projeto (`daedalus-filesystem`, `godot-mcp`, `blender-mcp`, `comfyui`) ficam concentrados em `.agents/plugins/daedalus-parallax/mcp_config.json` para evitar instâncias duplicadas.
+   - Os servidores MCP do projeto (`daedalus-filesystem`, `unity`, `blender-mcp`, `comfyui`) ficam concentrados em `.agents/plugins/daedalus-parallax/mcp_config.json` para evitar instâncias duplicadas.

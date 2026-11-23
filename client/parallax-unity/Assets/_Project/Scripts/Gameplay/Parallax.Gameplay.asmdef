@@ -1,0 +1,22 @@
+{
+    "name": "Parallax.Gameplay",
+    "rootNamespace": "Parallax.Gameplay",
+    "references": [
+        "Parallax.Core",
+        "Parallax.Rendering",
+        "Unity.Netcode.Runtime",
+        "Unity.Cinemachine",
+        "Unity.InputSystem",
+        "Unity.Animation.Rigging",
+        "Unity.AI.Navigation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

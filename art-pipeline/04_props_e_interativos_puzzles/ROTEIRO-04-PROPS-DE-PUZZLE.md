@@ -1,6 +1,6 @@
 # Roteiro 04 — Props Mecânicos e Interativos de Puzzle (A Matriz de Paralaxe no Cenário)
 
-**Destino de Exportação no Godot 4:** `client/parallax/04_props_e_interativos_puzzles/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/Props/`
 **Referências de Lore:** `matriz-de-paralaxe.md`, `chave-tripla.md`, `doutrina-do-fogo-minimo.md`, `pele-de-rede.md`, `fio-02-quarta-fechadura.md`
 
 ---
@@ -13,10 +13,10 @@ Na `matriz-de-paralaxe.md` e no `encontro-1-os-tubos-falam.md`, uma válvula tem
   ```text
   Via Blender MCP, construa o prop 3D `prop_valvula_mestra_thermatek` em escala real (2,4 metros de altura):
   1. Corpo principal: Tubulação vertical grossa em ferro fundido escuro com flanges rebitados.
-  2. Frente (Altura 1,2m - para o Goliath): Um volante hidráulico frontal de 1,1m de diâmetro pintado em vermelho-ferrugem (#C83214), separado como nó filho `Wheel_Hinge` para girar no eixo Z via HingeJoint3D no Godot.
+  2. Frente (Altura 1,2m - para o Goliath): Um volante hidráulico frontal de 1,1m de diâmetro pintado em vermelho-ferrugem (#C83214), separado como nó filho `Wheel_Hinge` para girar no eixo Z via HingeJoint na Unity.
   3. Topo (Altura 2,4m - para o Phantom): Uma placa metálica horizontal virada exclusivamente para cima (invisível da câmera do chão), onde o número da válvula (01 a 09) é aplicado via decalque/UV, com camada de fuligem nas laterais.
   4. Base lateral (para o Cipher): Uma caixa de junção blindada com 3 cabos emissivos violetas da Omni-Cripto.
-  Exporte como `prop_valvula_mestra_thermatek.glb` para `client/parallax/04_props_e_interativos_puzzles/valvulas_e_portas/`.
+  Exporte como `prop_valvula_mestra_thermatek.glb` para `client/parallax-unity/Assets/_Project/Art/Props/ValvesAndDoors/`.
   ```
 
 ---
@@ -47,7 +47,7 @@ Na `doutrina-do-fogo-minimo.md` e em `manometro-da-estacao-14.md`, as armas das 
   Via Blender MCP, crie um kit modular de tubulação pressurizada `prop_linha_viva_modular` (segmento reto de 4m, curva de 90 graus e junção em T):
   - O tubo de 0,9m de diâmetro deve ter aço escuro suado de condensação e uma **faixa diagonal dupla em amarelo-enxofre de alta visibilidade (#FFB300)** com o estêncil "LINHA VIVA - FOGO PROIBIDO".
   - Anexe o sub-prop `prop_manometro_140`: um mostrador analógico redondo com vidro rachado, ponteiro travado além da faixa vermelha no pino de 140% e um pedaço de fita isolante amarela colada sobre o número impresso.
-  Exporte para `client/parallax/04_props_e_interativos_puzzles/linhas_vivas_e_relogios/`.
+  Exporte para `client/parallax-unity/Assets/_Project/Art/Props/LinhasVivas/`.
   ```
 
 ---
@@ -60,5 +60,5 @@ Na `doutrina-do-fogo-minimo.md` e em `manometro-da-estacao-14.md`, as armas das 
   Via Blender MCP, modele dois props da Pele de Rede (`pele-de-rede.md`):
   1. `prop_farol_laser_kinesys`: Torre treliçada brutalista de 12 metros de altura coberta de gelo nas arestas, com um cabeçote giratório no topo contendo um espelho parabólico e emissor de feixe laser vermelho/ciano desalinhado pelo tremor.
   2. `prop_terminal_omnicripto`: Console brutalista angular de 1,5m de altura com tela CRT inclinada, entrada física para o Cartucho de Override e cabo de Nervo em serpentina de titânio saindo pela base.
-  Exporte para `client/parallax/04_props_e_interativos_puzzles/terminais_e_farois/`.
+  Exporte para `client/parallax-unity/Assets/_Project/Art/Props/Terminals/`.
   ```

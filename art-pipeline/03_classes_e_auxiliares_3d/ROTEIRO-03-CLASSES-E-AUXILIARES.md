@@ -1,12 +1,12 @@
 # Roteiro 03 — As 3 Classes, Os 3 Auxiliares e Os 2 Rigs Base (Pipeline 3D Low-Poly)
 
-**Destino de Exportação no Godot 4:** `client/parallax/03_classes_e_auxiliares/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/Characters/`
 **Referências de Lore:** `goliath.md`, `phantom.md`, `cipher.md`, `macaco.md`, `pipa.md`, `cartucho-de-override.md`
 
 ---
 
 ## Regra de Economia de Animação (Apenas 2 Esqueletos Base)
-Antes de exportar qualquer personagem para o Godot 4, todos os modelos passam pelo **Blender 4.x** e são vinculados a apenas **dois esqueletos (rigs) universais**:
+Antes de exportar qualquer personagem para a Unity, todos os modelos passam pelo **Blender 4.x** e são vinculados a apenas **dois esqueletos (rigs) universais**:
 1. **`Rig_Bipede_Pesado.blend`** (`2,6 m` de altura, passos lentos e pesados): Usado pelo **Goliath**, pelo **Mestre de Fornalha**, pelo **Regulador de Brandt** e pelo **Gestor-9**.
 2. **`Rig_Bipede_Padrao.blend`** (`1,8 m` de altura, ágil e tático): Usado pelo **Phantom**, pelo **Cipher** e por todas as **Esquadras de Contenção**.
 
@@ -17,11 +17,11 @@ Antes de exportar qualquer personagem para o Godot 4, todos os modelos passam pe
 - **Formato de Saída:** `goliath_rigged.glb`.
 - **Prompt de Geração 3D (Tripo 3D / Meshy AI / Hunyuan3D — Text-to-3D ou Image-to-3D):**
   ```text
-  Full body 3D character model in A-pose of "GOLIATH", a massive brutalist deep-core mining exoskeleton modified for combat on Triton moon, 2.6 meters tall, welded asymmetric heavy lead armor plates over hydraulic pistons, compact geothermal reactor core glowing orange on the upper back, wide flat industrial helmet with narrow horizontal slit visor, burnt orange and rusted dark steel paint (#D94E1F and #1E2229), stylized low-poly hard-surface game asset, clean silhouette for 2.5D side-scroller, no background
+  Full body 3D character model in A-pose of "GOLIATH", a massive brutalist deep-core mining exoskeleton modified for combat on Triton moon, 2.6 meters tall, welded asymmetric heavy lead armor plates over hydraulic pistons, compact geothermal reactor core glowing orange on the upper back, wide flat industrial helmet with narrow horizontal slit visor, burnt orange and rusted dark steel paint (#D94E1F and #1E2229), stylized low-poly hard-surface game asset, clean silhouette readable from a third-person camera, no background
   ```
 - **Prompt para o Agente via Blender MCP (Pós-processamento e Rigging no Blender):**
   ```text
-  Via Blender MCP, importe a malha base do Goliath, aplique um modificador Decimate para manter a contagem abaixo de 4.500 triângulos com sombreamento Flat/Auto-Smooth em 35 graus, separe a tampa frontal do peito como um nó filho (`Chest_Relic_Socket`, onde o Coração de Hefesto será encaixado), associe ao esqueleto `Rig_Bipede_Pesado` e exporte como `goliath_rigged.glb` para `client/parallax/03_classes_e_auxiliares/goliath/`.
+  Via Blender MCP, importe a malha base do Goliath, aplique um modificador Decimate para manter a contagem abaixo de 4.500 triângulos com sombreamento Flat/Auto-Smooth em 35 graus, separe a tampa frontal do peito como um nó filho (`Chest_Relic_Socket`, onde o Coração de Hefesto será encaixado), associe ao esqueleto `Rig_Bipede_Pesado` e exporte como `goliath_rigged.glb` para `client/parallax-unity/Assets/_Project/Art/Characters/Goliath/`.
   ```
 
 ---

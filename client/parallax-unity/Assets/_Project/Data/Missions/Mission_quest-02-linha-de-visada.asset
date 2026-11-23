@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa467161eabb5249b30ebc02f6868a4, type: 3}
+  m_Name: Mission_quest-02-linha-de-visada
+  m_EditorClassIdentifier: Parallax.Core::Parallax.Core.Definitions.MissionDefinition
+  id: quest-02-linha-de-visada
+  displayNameKey: quest-02-linha-de-visada.title
+  daedalusNote: quest-02-linha-de-visada
+  kind: 3
+  corporation: 1
+  corporationIsCifra: 0
+  showsFourProngMark: 0
+  radioSpeaker: candeia
+  biomeKey: quest-02-linha-de-visada.biome
+  briefingKey: quest-02-linha-de-visada.briefing
+  readingGoliathKey: quest-02-linha-de-visada.reading.goliath
+  readingPhantomKey: quest-02-linha-de-visada.reading.phantom
+  readingCipherKey: quest-02-linha-de-visada.reading.cipher
+  rewardKey: quest-02-linha-de-visada.reward
+  sceneName: Quest02_Farol3Gelo
+  sectorHeat: 0.1

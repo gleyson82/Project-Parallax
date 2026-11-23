@@ -1,6 +1,6 @@
 # Roteiro 01 — Menu Principal ("A Sala de Máquinas") e O Quadro de Válvulas (Beta)
 
-**Destino de Exportação no Godot 4:** `client/parallax/01_ui_menu_beta/assets/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/UI/`
 **Referências de Lore:** `jogos/parallax/interface/menu-principal.md`, `quadro-de-valvulas.md`, `ficha-de-incursao.md`
 
 ---
@@ -14,7 +14,7 @@
   ```
 - **Prompt para Agente de Código (Cursor / Antigravity) gerar no Material Maker (`.ptex`):**
   ```text
-  Crie um grafo de material PBR procedural para o Material Maker (ou Shader 2D Godot) simulando a chapa de aço escuro do Quadro de Válvulas: base metálica escura (#0D1015, metallic 0.85, roughness 0.45), ruído Perlin fino para micro-arranhões industriais, veios de ferrugem cobre (#8A3318) nas bordas e mapa de normal acentuado para reagir à luz de caldeira.
+  Crie um grafo de material PBR procedural para o Material Maker (ou Shader Graph da URP) simulando a chapa de aço escuro do Quadro de Válvulas: base metálica escura (#0D1015, metallic 0.85, roughness 0.45), ruído Perlin fino para micro-arranhões industriais, veios de ferrugem cobre (#8A3318) nas bordas e mapa de normal acentuado para reagir à luz de caldeira.
   ```
 
 ---
@@ -52,7 +52,7 @@ Na lore do `quadro-de-valvulas.md`, o jogador não clica em ícones abstratos: e
 - **Formato de Saída:** `logo_therma_tek.svg`, `logo_kinesys.svg`, `logo_omni_cripto.svg`, `logo_cifra.svg`, `marca_quatro_hastes.svg`.
 - **Prompt para o Agente de Código (Cursor / Antigravity):**
   ```text
-  Crie 5 arquivos SVG minimalistas e brutalistas (estilo sinalização industrial soviética/cyberpunk, monocromáticos para receberem cor via shader no Godot 4):
+  Crie 5 arquivos SVG minimalistas e brutalistas (estilo sinalização industrial soviética/cyberpunk, monocromáticos para receberem cor via material na Unity):
   1. `logo_therma_tek.svg`: Uma bigorna hexagonal atravessada por três ondas verticais de calor ascendente. Cor base: laranja-fornalha (#FF5722).
   2. `logo_kinesys.svg`: Um cristal de nitrogênio pontiagudo inscrito em uma asa orbital geométrica. Cor base: ciano-criogênico (#00E5FF).
   3. `logo_omni_cripto.svg`: Um olho geométrico formado por três chaves quânticas interligadas em triângulo (a Chave Tripla). Cor base: branco-violeta (#B388FF).

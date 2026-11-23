@@ -1,0 +1,116 @@
+{
+  "game": "parallax",
+  "count": 9,
+  "fragments": [
+    {
+      "id": "etiqueta-de-cota",
+      "title": "Etiqueta de cota",
+      "olhar": "goliath",
+      "status": "cânone",
+      "camada": "base",
+      "text": "COTA FAMILIAR: SOUZA-ADEODATO.\nNÃO ABRIR NA NOITE.",
+      "links": [
+        "cota-familiar",
+        "quest-01-calor-de-contrabando"
+      ]
+    },
+    {
+      "id": "manometro-da-estacao-14",
+      "title": "Manômetro da Estação 14",
+      "olhar": "goliath",
+      "status": "cânone",
+      "camada": "base",
+      "text": "Mostrador de vidro rachado. O ponteiro passa da faixa vermelha e bate no pino. Alguém colou fita amarela sobre o número impresso.",
+      "links": [
+        "mare-e-calor",
+        "quest-01-calor-de-contrabando"
+      ]
+    },
+    {
+      "id": "placa-de-turno-4",
+      "title": "Placa de Turno 4",
+      "olhar": "goliath",
+      "status": "cânone",
+      "camada": "base",
+      "text": "Gravada a calor no flanco de uma carcaça. Só aparece quando o traje esquenta perto dela.\n> TURNO **4** · ENCERRADO",
+      "links": [
+        "encontro-1-descida-ao-setor-nulo",
+        "segredo-o-disco-morno"
+      ]
+    },
+    {
+      "id": "placa-de-turno-11",
+      "title": "Placa de Turno 11",
+      "olhar": "phantom",
+      "status": "cânone",
+      "camada": "base",
+      "text": "Cravada no alto de uma viga, onde só alcança quem sobe.\n> TURNO **11** · ENCERRADO",
+      "links": [
+        "encontro-2-camara-das-leituras-falsas",
+        "segredo-o-disco-morno"
+      ]
+    },
+    {
+      "id": "rotas-riscadas",
+      "title": "Rotas riscadas",
+      "olhar": "phantom",
+      "status": "cânone",
+      "camada": "base",
+      "text": "Mapa de superfície a lápis.\nRota 7 — fechou.\nRota 8 — fechou em cinco dias.\nRota 9 — não use.",
+      "links": [
+        "atmosfera-crescente",
+        "quest-02-linha-de-visada"
+      ]
+    },
+    {
+      "id": "fonte-p",
+      "title": "Fonte P",
+      "olhar": "cipher",
+      "status": "cânone",
+      "camada": "base",
+      "text": "CATÁLOGO DE INTERFERÊNCIAS\nFONTE P · PERÍODO 26h56 · ORIGEM: ?",
+      "links": [
+        "fio-01-sinal-de-proteu",
+        "quest-02-linha-de-visada"
+      ]
+    },
+    {
+      "id": "manometro-no-livro-razao",
+      "title": "Manômetro no livro-razão",
+      "olhar": "cipher",
+      "status": "cânone",
+      "camada": "base",
+      "text": "RESERVATÓRIO CENTRAL · CAPACIDADE: 100 · PRODUÇÃO: 140\nBALANÇO PÚBLICO · PRODUÇÃO: 61",
+      "links": [
+        "encontro-4-o-coracao",
+        "manometro-da-estacao-14",
+        "mare-e-calor"
+      ]
+    },
+    {
+      "id": "meta-de-perda",
+      "title": "Meta de perda",
+      "olhar": "cipher",
+      "status": "cânone",
+      "camada": "base",
+      "text": "BERÇO 0412 · RESERVA: 11 ANOS · META DE PERDA: 0,00",
+      "links": [
+        "encontro-3-ciclo-4113",
+        "fio-03-rastro-de-omega",
+        "quest-03-chave-tripla"
+      ]
+    },
+    {
+      "id": "placa-de-turno-3",
+      "title": "Placa de Turno 3",
+      "olhar": "cipher",
+      "status": "cânone",
+      "camada": "base",
+      "text": "Arquivo escondido no registro de gestão, sob um nome que não aparece em nenhuma lista.\n> TURNO **3** · ENCERRADO",
+      "links": [
+        "encontro-3-ciclo-4113",
+        "segredo-o-disco-morno"
+      ]
+    }
+  ]
+}

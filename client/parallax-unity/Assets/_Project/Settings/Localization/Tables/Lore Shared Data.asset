@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Lore Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Lore
+  m_TableCollectionNameGuidString: 1a427c359a4352f4aa6dc9a3f49e5fcb
+  m_Entries:
+  - m_Id: 397608443904
+    m_Key: fragment.etiqueta-de-cota.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397641998336
+    m_Key: fragment.etiqueta-de-cota.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397751050240
+    m_Key: fragment.manometro-da-estacao-14.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397751050241
+    m_Key: fragment.manometro-da-estacao-14.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397868490752
+    m_Key: fragment.placa-de-turno-4.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397868490753
+    m_Key: fragment.placa-de-turno-4.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397985931264
+    m_Key: fragment.placa-de-turno-11.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397985931265
+    m_Key: fragment.placa-de-turno-11.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398090788864
+    m_Key: fragment.rotas-riscadas.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398090788865
+    m_Key: fragment.rotas-riscadas.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398199840768
+    m_Key: fragment.fonte-p.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398199840769
+    m_Key: fragment.fonte-p.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398308892672
+    m_Key: fragment.manometro-no-livro-razao.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398308892673
+    m_Key: fragment.manometro-no-livro-razao.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398422138880
+    m_Key: fragment.meta-de-perda.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398422138881
+    m_Key: fragment.meta-de-perda.text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398531190784
+    m_Key: fragment.placa-de-turno-3.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398531190785
+    m_Key: fragment.placa-de-turno-3.text
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7023238795631788094
+  references:
+    version: 2
+    RefIds:
+    - rid: 7023238795631788094
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1795392568926

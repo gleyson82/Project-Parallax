@@ -1,0 +1,30 @@
+{
+    "name": "Parallax.Editor",
+    "rootNamespace": "Parallax.EditorTools",
+    "references": [
+        "Parallax.Core",
+        "Parallax.Networking",
+        "Parallax.Gameplay",
+        "Parallax.Rendering",
+        "Parallax.UI",
+        "Unity.Netcode.Runtime",
+        "Unity.Cinemachine",
+        "Unity.InputSystem",
+        "Unity.Localization",
+        "Unity.Localization.Editor",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.AI.Navigation"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

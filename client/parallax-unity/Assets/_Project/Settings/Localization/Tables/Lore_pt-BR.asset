@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Lore_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 1a427c359a4352f4aa6dc9a3f49e5fcb, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 397608443904
+    m_Localized: Etiqueta de cota
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397641998336
+    m_Localized: "COTA FAMILIAR: SOUZA-ADEODATO.\nN\xC3O ABRIR NA NOITE."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397751050240
+    m_Localized: "Man\xF4metro da Esta\xE7\xE3o 14"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397751050241
+    m_Localized: "Mostrador de vidro rachado. O ponteiro passa da faixa vermelha
+      e bate no pino. Algu\xE9m colou fita amarela sobre o n\xFAmero impresso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397868490752
+    m_Localized: Placa de Turno 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397868490753
+    m_Localized: "Gravada a calor no flanco de uma carca\xE7a. S\xF3 aparece quando
+      o traje esquenta perto dela.\n> TURNO **4** \xB7 ENCERRADO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397985931264
+    m_Localized: Placa de Turno 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397985931265
+    m_Localized: "Cravada no alto de uma viga, onde s\xF3 alcan\xE7a quem sobe.\n>
+      TURNO **11** \xB7 ENCERRADO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398090788864
+    m_Localized: Rotas riscadas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398090788865
+    m_Localized: "Mapa de superf\xEDcie a l\xE1pis.\nRota 7 \u2014 fechou.\nRota
+      8 \u2014 fechou em cinco dias.\nRota 9 \u2014 n\xE3o use."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398199840768
+    m_Localized: Fonte P
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398199840769
+    m_Localized: "CAT\xC1LOGO DE INTERFER\xCANCIAS\nFONTE P \xB7 PER\xCDODO 26h56
+      \xB7 ORIGEM: ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398308892672
+    m_Localized: "Man\xF4metro no livro-raz\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398308892673
+    m_Localized: "RESERVAT\xD3RIO CENTRAL \xB7 CAPACIDADE: 100 \xB7 PRODU\xC7\xC3O:
+      140\nBALAN\xC7O P\xDABLICO \xB7 PRODU\xC7\xC3O: 61"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398422138880
+    m_Localized: Meta de perda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398422138881
+    m_Localized: "BER\xC7O 0412 \xB7 RESERVA: 11 ANOS \xB7 META DE PERDA: 0,00"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398531190784
+    m_Localized: Placa de Turno 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398531190785
+    m_Localized: "Arquivo escondido no registro de gest\xE3o, sob um nome que n\xE3o
+      aparece em nenhuma lista.\n> TURNO **3** \xB7 ENCERRADO"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

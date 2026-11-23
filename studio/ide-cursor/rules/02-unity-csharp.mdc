@@ -1,0 +1,29 @@
+---
+description: "Padrões de engenharia C# para o cliente Unity 6 LTS de PARALLAX: assemblies, ScriptableObjects, proibição de lógica em Update, testes e fluxo com Unity CLI/MCP."
+globs: "client/parallax-unity/**/*.{cs,asmdef,asset,prefab,unity,inputactions}"
+alwaysApply: false
+---
+
+# Engenharia Unity 6 LTS — PARALLAX (3D Co-op, PhysX, NGO)
+
+1. **Fronteiras de assembly (`Assets/_Project/Scripts`):**
+   - `Parallax.Core` (modelos puros + ScriptableObjects de dados) ← `Parallax.Rendering` ← `Parallax.Gameplay` ← `Parallax.UI` ← `Parallax.Editor`. `Parallax.Networking` depende só de `Core`.
+   - Lógica nova e testável nasce em `Core` com teste em `Tests/EditMode` (NUnit). Nada de `UnityEditor` fora de `Scripts/Editor`.
+
+2. **Dados e componentes:**
+   - Balanceamento em ScriptableObject (`ClassDefinition`, `WeaponDefinition`, `RelicDefinition`, `CorporationDefinition`, `MissionDefinition`, `ThermalProfile`, `CameraProfile`). Um tipo por arquivo, com o mesmo nome.
+   - `[SerializeField] private` + propriedades de leitura. Composição (`ThermalNode`, `BeatSequencer`, `LockActuator`) em vez de herança profunda.
+
+3. **Sem lógica de jogo em `Update()`:**
+   - Use eventos, callbacks do Input System (`ParallaxInput`), corrotinas, RPCs ou `NetworkTickSystem.Tick`.
+   - `Update`/`LateUpdate` só para integrar movimento do dono e interpolar visual, com comentário explicando.
+   - Estáticos zerados em `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]` (Domain Reload desligado).
+
+4. **Física 3D (PhysX):**
+   - Personagens com `CharacterController` (`ParallaxCharacterMotor`). Porta de 10 t, volantes e plataformas com `Rigidbody` + `ConfigurableJoint`/`HingeJoint`, simulados só no servidor.
+   - Gravidade de gameplay: 7,79 m/s² (valor do protótipo; a gravidade real de Tritão é 0,779 m/s²; mudar exige decisão em `studio/decisoes/`).
+
+5. **Validação obrigatória após editar C# ou assets:**
+   - `unity recompile` (0 erros no console) e `unity test --platform EditMode`.
+   - Batch: `Unity.exe -batchmode -quit -projectPath client/parallax-unity -runTests -testPlatform EditMode -testResults TestResults.xml`.
+   - Configuração do projeto: menu `Parallax/Bootstrap` ou `-executeMethod Parallax.EditorTools.ProjectBootstrap.RunBatch`.

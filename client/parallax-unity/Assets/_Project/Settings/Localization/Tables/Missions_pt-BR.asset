@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Missions_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ce64e11a004ecf14cbc3e71b419db5b1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1192189952
+    m_Localized: "QUEST 1 \xB7 CALOR DE CONTRABANDO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1225744384
+    m_Localized: "Fosso de Hefesto \xB7 Esta\xE7\xE3o de V\xE1lvula 14 (Face Voltada)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132992
+    m_Localized: "\"O Setor 7-Baixo faz tr\xEAs dias sem calor. Na Esta\xE7\xE3o
+      14 tem um cont\xEAiner de acumuladores que o Sindicato chama de reserva estrat\xE9gica.
+      A gente chama de jantar. Entra, pega e joga no duto.\" \u2014 Candeia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132993
+    m_Localized: "[CAMADA F\xCDSICA \xB7 GOLIATH]: Press\xE3o do duto em 140% (sobrecarga
+      oculta). Porta de chumbo de 10 t na C\xE2mara de Despacho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132994
+    m_Localized: "[CAMADA ESPACIAL \xB7 PHANTOM]: Passarela superior sobre a casa
+      de caldeiras; sangria secund\xE1ria acess\xEDvel por cabo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132995
+    m_Localized: "[CAMADA L\xD3GICA \xB7 CIPHER]: Trava l\xF3gica simples na C\xE2mara
+      de Despacho; Linhas Vivas ativas no corredor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132996
+    m_Localized: "N\xFAcleos T\xE9rmicos \xB7 1\xAA Arma Therma-Tek \xB7 Auxiliar
+      Macaco"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132997
+    m_Localized: "QUEST 2 \xB7 LINHA DE VISADA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132998
+    m_Localized: "Os Estilha\xE7os \xB7 Farol 3-Gelo (Superf\xEDcie -235 \xB0C)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132999
+    m_Localized: "\"O Cruzador Vagalume est\xE1 parado numa tempestade com duzentas
+      pessoas dentro. O Farol 3 saiu do alinhamento depois do \xFAltimo tremor. Sobe,
+      alinha o espelho e me d\xE1 um caminho antes que o gelo escolha por n\xF3s.\"
+      \u2014 Candeia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133000
+    m_Localized: "[CAMADA F\xCDSICA \xB7 GOLIATH]: Mastro inst\xE1vel sob tremor;
+      requer ancoragem pesada na base durante o alinhamento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133001
+    m_Localized: "[CAMADA ESPACIAL \xB7 PHANTOM]: Topo do mastro a 100 m; rota vertical
+      entre colunas de g\xEAiseres de 8 km."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133002
+    m_Localized: "[CAMADA L\xD3GICA \xB7 CIPHER]: Fratura de Nervo a 1,4 km; anomalia
+      espectral 'FONTE P' repetindo a cada 26h56."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133003
+    m_Localized: "Rifle Criog\xEAnico Kinesys \xB7 Cabo de Tens\xE3o \xB7 Auxiliar
+      Pipa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133004
+    m_Localized: "QUEST 3 \xB7 CHAVE TRIPLA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133005
+    m_Localized: "Krios-Prime \xB7 N\xF3 Cinza (Face Cega \xB7 C\xE9u sem Netuno)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133006
+    m_Localized: "\"O Sindicato mant\xE9m uma lista. Quem entra em uma Arca, quando
+      e de qual setor. Ela passa por um n\xF3 em Krios-Prime. A porta pede tr\xEAs
+      coisas ao mesmo tempo. Agora voc\xEAs s\xE3o tr\xEAs.\" \u2014 Candeia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133007
+    m_Localized: "[CAMADA F\xCDSICA \xB7 GOLIATH]: Fechadura 1 (Therma-Tek): volante
+      de alta resist\xEAncia t\xE9rmica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133008
+    m_Localized: "[CAMADA ESPACIAL \xB7 PHANTOM]: Fechadura 2 (Kinesys): trava estrutural
+      suspensa sob a redoma invertida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133009
+    m_Localized: "[CAMADA L\xD3GICA \xB7 CIPHER]: Fechadura 3 (Omni-Cripto): Janela
+      de Sincronia aberta + 4\xBA recept\xE1culo sem selo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133010
+    m_Localized: "Equipamento Omni-Cripto \xB7 Manifesto das Arcas \xB7 Desbloqueia
+      Raid 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133011
+    m_Localized: "RAID 1 \xB7 SANGRIA DE HEFESTO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133012
+    m_Localized: "Fosso de Hefesto \xB7 Reator Central (Face Voltada)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133013
+    m_Localized: "\"Se abrir essas v\xE1lvulas sem autoriza\xE7\xE3o da Diretoria,
+      o reator despressuriza em tr\xEAs minutos. Voc\xEAs n\xE3o entendem o custo
+      do calor que roubam. Saiam do meu piso.\" \u2014 Engenheiro-Chefe Brandt (intercepta\xE7\xE3o)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133014
+    m_Localized: "[CAMADA F\xCDSICA \xB7 GOLIATH]: 9 v\xE1lvulas no P\xE1tio; a cad\xEAncia
+      da Batida nos canos dita a ordem; Porta de Press\xE3o no Cora\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133015
+    m_Localized: "[CAMADA ESPACIAL \xB7 PHANTOM]: N\xFAmeros cobertos de fuligem
+      vis\xEDveis s\xF3 das vigas altas; placas do Mestre de Fornalha prontas para
+      Choque T\xE9rmico."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133016
+    m_Localized: "[CAMADA L\xD3GICA \xB7 CIPHER]: Sensor s\xEDsmico na Galeria das
+      Plataformas; o Livro-Raz\xE3o de Brandt oculta a produ\xE7\xE3o real de 140%."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133017
+    m_Localized: "Arsenal Therma-Tek Grau Alto \xB7 Segredo: o Cora\xE7\xE3o de Hefesto
+      (Grau-Zero)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133018
+    m_Localized: "RAID 2 \xB7 META ATINGIDA (SETOR 9-N)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133019
+    m_Localized: "Cemit\xE9rio das M\xE1quinas \xB7 Setor Nulo Soterrado (Face Cega)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133020
+    m_Localized: "\"A fornalha do Setor Nove-N trabalha h\xE1 dezenove anos sem ningu\xE9m
+      vivo para aquecer. A Diretriz \xD4mega ainda est\xE1 l\xE1 dentro contando
+      vazamentos. Des\xE7am em sil\xEAncio e tragam esse calor.\" \u2014 Candeia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133021
+    m_Localized: "[CAMADA F\xCDSICA \xB7 GOLIATH]: Ar morno an\xF4malo; carca\xE7as
+      exigem Modo Brasa; o man\xF4metro mec\xE2nico desmente a rede."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133022
+    m_Localized: "[CAMADA ESPACIAL \xB7 PHANTOM]: 5 An\xE9is de Escuta ac\xFAstica;
+      pontos de instala\xE7\xE3o de Surdinas e Placa de Turno 11 no teto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133023
+    m_Localized: "[CAMADA L\xD3GICA \xB7 CIPHER]: ALERTA: a \xD4mega falsifica 1
+      leitura por rodada. Meta do Ciclo 4.113 vinculada ao n\xFAmero de vivos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133024
+    m_Localized: "Arsenal Omni-Cripto Grau Alto \xB7 Segredo: o C\xF3digo-Fonte \xD4mega
+      (Grau-Zero)"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

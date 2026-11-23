@@ -1,0 +1,19 @@
+{
+    "name": "Parallax.Networking",
+    "rootNamespace": "Parallax.Networking",
+    "references": [
+        "Parallax.Core",
+        "Unity.Netcode.Runtime",
+        "Unity.Networking.Transport",
+        "com.rlabrecque.steamworks.net"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

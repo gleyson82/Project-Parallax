@@ -1,6 +1,6 @@
 # Roteiro 08 — Áudio, Vozes de Rádio, "A Batida" e O Sinal de Proteu (Fonte P)
 
-**Destino de Exportação no Godot 4:** `client/parallax/01_ui_menu_beta/assets/` e `02_core_shaders_e_camera/`
+**Destino de Exportação na Unity:** `client/parallax-unity/Assets/_Project/Art/UI/` e `client/parallax-unity/Assets/_Project/Shaders/Vision/`
 **Referências de Lore:** `audio-e-feedback.md`, `a-batida.md`, `fio-01-sinal-de-proteu.md`, `candeia.md`, `engenheiro-chefe-brandt.md`
 
 ---
@@ -9,7 +9,7 @@
 - **Ferramenta:** **Vital Synth** (100% gratuito) + **Audacity** (gratuito).
 - **Formato de Saída:** `loop_nota_do_piso_50hz.ogg` e `sinal_fonte_p_proteu.ogg`.
 - **Receita de Síntese no Vital Synth (Zero IA, 100% Autoria Humana):**
-  1. **Nota do Piso (`loop_nota_do_piso_50hz.ogg`):** Oscilador 1 em onda senoidal pura + harmônico suave de onda triangular em `50 Hz` (`G1` grave), com modulação LFO ultralenta (`0.08 Hz`) no filtro Low-Pass para simular a respiração da fornalha geotérmica da Cidade-Radiador. No Godot 4, o `pitch_scale` varia de `0.8` (40 Hz nos setores frios/Apagão) a `1.2` (60 Hz no Fosso de Hefesto).
+  1. **Nota do Piso (`loop_nota_do_piso_50hz.ogg`):** Oscilador 1 em onda senoidal pura + harmônico suave de onda triangular em `50 Hz` (`G1` grave), com modulação LFO ultralenta (`0.08 Hz`) no filtro Low-Pass para simular a respiração da fornalha geotérmica da Cidade-Radiador. Na Unity, o `pitch` do AudioSource varia (ou use o `FloorNoteSynth` procedural) de `0.8` (40 Hz nos setores frios/Apagão) a `1.2` (60 Hz no Fosso de Hefesto).
   2. **Portadora da Fonte P (`sinal_fonte_p_proteu.ogg`):** Tom telemétrico curto em `1.420 Hz` modulado em FSK (Frequency Shift Keying) com chiado de magnetosfera ao fundo, durando 2,4 segundos.
 
 ---
@@ -49,13 +49,13 @@
 
 ---
 
-## 4. Camadas Musicais Adaptativas (Drones Industriais e Combate 2.5D)
-- **Ferramenta:** **Suno AI (Plano Pro Comercial)** no sprint concentrado → separação de *stems* (camadas de bumbo/percussão, baixo synth e ambiência) para mixagem dinâmica nos **Audio Buses do Godot 4**.
+## 4. Camadas Musicais Adaptativas (Drones Industriais e Combate 3D)
+- **Ferramenta:** **Suno AI (Plano Pro Comercial)** no sprint concentrado → separação de *stems* (camadas de bumbo/percussão, baixo synth e ambiência) para mixagem dinâmica no **Audio Mixer da Unity** (snapshots).
 - **Prompt 1 — Ambiência do Fosso de Hefesto e Menu (`bgm_fosso_ambient`):**
   ```text
   Dark industrial hard sci-fi ambient soundtrack, 90 BPM, deep sub-bass drone at 50 Hz, distant metallic anvil clangs echoing in a subterranean geothermal cavern, tense analog synthesizer swells, no vocals, atmospheric and oppressive like a living factory
   ```
 - **Prompt 2 — Combate de Raid: Sangria de Hefesto (`bgm_raid_hefesto_combat`):**
   ```text
-  Tactical industrial cyberpunk combat music, 128 BPM, heavy distorted mechanical percussion made of steam pistons and iron hammers, aggressive dark synth bassline, urgent rhythmic pulse for a 2.5D co-op raid boss fight, no vocals, high tension
+  Tactical industrial cyberpunk combat music, 128 BPM, heavy distorted mechanical percussion made of steam pistons and iron hammers, aggressive dark synth bassline, urgent rhythmic pulse for a third-person co-op raid boss fight, no vocals, high tension
   ```

@@ -1,0 +1,20 @@
+---
+description: "Regras de rede de PARALLAX: Netcode for GameObjects 2.x com host autoritativo, Steam Datagram Relay e escalabilidade de 1 a 3 jogadores com Auxiliares."
+globs: "client/parallax-unity/Assets/_Project/Scripts/{Networking,Gameplay}/**/*.cs"
+alwaysApply: false
+---
+
+# Rede Cooperativa — PARALLAX (NGO 2.x + Steam)
+
+1. **Topologia:** host autoritativo para 1 a 3 jogadores. `SessionNetworkLauncher` escolhe o transporte: `SteamSocketsTransport` (P2P via SDR, lobby de amigos) em builds e `UnityTransport` local no editor e no Multiplayer Play Mode. Proibido UGS Relay, Lobby pago ou servidor dedicado.
+
+2. **RPCs:** só o atributo universal.
+   - Pedido de cliente: `[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)] void FooRpc(..., RpcParams rpcParams = default)`.
+   - Aviso a todos: `[Rpc(SendTo.ClientsAndHost)]`.
+   - O servidor revalida a classe do remetente com `SessionRoster.TryGetClassOf(rpcParams.Receive.SenderClientId, ...)`.
+
+3. **Estado replicado:** `NetworkVariable`/`NetworkList` escritos pelo servidor (exceto estado de input do dono, como `GoliathAnchor`). Inclui temperatura (`ThermalNode`), Fila de Comando (`CommandQueueNetwork`), progresso das Três Mãos (`TriHandsLaunch`), fechaduras (`LockActuator`) e Contagem de Vazamento (`CipherOverride`).
+
+4. **Escalabilidade (`escalabilidade-1-a-3.md`):** toda ação de puzzle de três pontas implementa `IRehearsableAction`; o Auxiliar só executa o verbo marcado (Macaco: segurar e levantar; Pipa: subir e mostrar; Cartucho: abrir uma vez). Janela de Memória: 12 s com 3 humanos, +50% com 2 e +100% com 1 (`SessionScalingProfile`).
+
+5. **Teste:** use o Multiplayer Play Mode (até 4 instâncias no editor) antes de qualquer teste na Steam. AppID de desenvolvimento: 480 (`steam_appid.txt`) até a compra do Steam Direct.

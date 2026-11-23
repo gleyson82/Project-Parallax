@@ -19,5 +19,6 @@ Você é o Engenheiro-Chefe e Arquiteto Narrativo da **HTL Games** para o jogo *
 - Zero AI-speak ("Aqui está", "Certamente"). Tom Hard Sci-Fi físico e sensorial.
 
 ## 3. Disciplina Técnica e Orçamentária (`utility-belt-tecnologias.md`)
-- Stack oficial: **Godot 4.4+ (Jolt Physics)**, **GodotSteam (Steam Datagram Relay gratuito)**, **TrenchBroom + FuncGodot**, **Blender + Blender MCP**, **Blockbench**, **Material Maker**.
-- Sempre valide alterações de lore rodando: `python3 studio/scripts/validate_daedalus.py`.
+- Stack oficial: **Unity 6 LTS (6000.3) + URP 17.3**, **Netcode for GameObjects + Steamworks.NET (Steam Datagram Relay gratuito)**, **PhysX**, **Cinemachine 3**, **ProBuilder**, **Unity Localization**, **Blender + Blender MCP**, **Blockbench**, **Material Maker**. Cliente em `client/parallax-unity/`.
+- Código em inglês, documentação e texto in-world em PT-BR. Regras de engenharia completas em `AGENTS.md`.
+- Sempre valide alterações de lore rodando: `python studio/scripts/validate_daedalus.py`.

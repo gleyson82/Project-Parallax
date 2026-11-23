@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Missions Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Missions
+  m_TableCollectionNameGuidString: ce64e11a004ecf14cbc3e71b419db5b1
+  m_Entries:
+  - m_Id: 1192189952
+    m_Key: quest-01-calor-de-contrabando.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1225744384
+    m_Key: quest-01-calor-de-contrabando.biome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132992
+    m_Key: quest-01-calor-de-contrabando.briefing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132993
+    m_Key: quest-01-calor-de-contrabando.reading.goliath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132994
+    m_Key: quest-01-calor-de-contrabando.reading.phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132995
+    m_Key: quest-01-calor-de-contrabando.reading.cipher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132996
+    m_Key: quest-01-calor-de-contrabando.reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132997
+    m_Key: quest-02-linha-de-visada.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132998
+    m_Key: quest-02-linha-de-visada.biome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234132999
+    m_Key: quest-02-linha-de-visada.briefing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133000
+    m_Key: quest-02-linha-de-visada.reading.goliath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133001
+    m_Key: quest-02-linha-de-visada.reading.phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133002
+    m_Key: quest-02-linha-de-visada.reading.cipher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133003
+    m_Key: quest-02-linha-de-visada.reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133004
+    m_Key: quest-03-chave-tripla.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133005
+    m_Key: quest-03-chave-tripla.biome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133006
+    m_Key: quest-03-chave-tripla.briefing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133007
+    m_Key: quest-03-chave-tripla.reading.goliath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133008
+    m_Key: quest-03-chave-tripla.reading.phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133009
+    m_Key: quest-03-chave-tripla.reading.cipher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133010
+    m_Key: quest-03-chave-tripla.reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133011
+    m_Key: sangria-de-hefesto.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133012
+    m_Key: sangria-de-hefesto.biome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133013
+    m_Key: sangria-de-hefesto.briefing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133014
+    m_Key: sangria-de-hefesto.reading.goliath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133015
+    m_Key: sangria-de-hefesto.reading.phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133016
+    m_Key: sangria-de-hefesto.reading.cipher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133017
+    m_Key: sangria-de-hefesto.reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133018
+    m_Key: meta-atingida.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133019
+    m_Key: meta-atingida.biome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133020
+    m_Key: meta-atingida.briefing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133021
+    m_Key: meta-atingida.reading.goliath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133022
+    m_Key: meta-atingida.reading.phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133023
+    m_Key: meta-atingida.reading.cipher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234133024
+    m_Key: meta-atingida.reward
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7023238795631788093
+  references:
+    version: 2
+    RefIds:
+    - rid: 7023238795631788093
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1795392568730

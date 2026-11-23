@@ -25,5 +25,6 @@ Use esta skill para manter 100% de consistência narrativa, física e estrutural
 4. **Validação Obrigatória e Sincronização:**
    - Execute o validador oficial (compatível com Windows e macOS/Linux via `uv`):
      `uv run --no-project python studio/scripts/validate_daedalus.py`
-   - Se tiver criado ou editado fragmentos in-world, atualize o JSON de exportação para o Godot:
+   - Se tiver criado ou editado fragmentos in-world, atualize a exportação para a Unity e importe no editor
+     (menu `Parallax/Daedalus/Import Generated JSON`):
      `uv run --no-project python studio/scripts/sync_daedalus.py`

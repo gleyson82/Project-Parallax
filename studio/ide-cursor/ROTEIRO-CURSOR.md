@@ -1,6 +1,6 @@
-# Roteiro de Configuração e Uso — Cursor Pro (PARALLAX)
+# Roteiro de Configuração e Uso — Cursor Pro (PARALLAX em Unity 6 LTS)
 
-Esta pasta (`studio/ide-cursor/`) documenta e guarda os espelhos de segurança de toda a configuração do **Cursor Pro** para o desenvolvimento de **PARALLAX**. Os arquivos ativos já estão instalados na raiz do projeto em `.cursor/` e `AGENTS.md`.
+Esta pasta (`studio/ide-cursor/`) documenta e guarda os espelhos de segurança de toda a configuração do **Cursor Pro** para o desenvolvimento de **PARALLAX**. Os arquivos ativos ficam na raiz do projeto em `.cursor/` e `AGENTS.md`.
 
 ---
 
@@ -10,62 +10,50 @@ Como o estúdio já possui **6 meses quitados** do **Cursor Pro (US$ 20/mês)** 
 
 | Quando usar o **Cursor Pro** | Quando usar o **Antigravity** |
 | --- | --- |
-| Edição rápida linha a linha (**Cursor Tab**) em `.gd` e `.gdshader`. | Orquestração pesada com **Subagentes** (`research`, `self`, `browser`) e **Workflows Python** (`run_workflow`). |
-| Refatoração multi-arquivo cirúrgica via **Composer (`Cmd+I` / `Ctrl+I`)** com regras `.mdc` engatilhadas por extensão (`globs`). | Auditoria completa das 114+ notas de lore, geração em lote de fragmentos e criação de sistemas inteiros via **Skills** (`.agents/skills/`). |
-| Iteração ao vivo com o editor do Godot 4 aberto lado a lado usando o **Godot MCP**. | Planejamento arquitetural profundo, revisão de física/matemática de puzzles e geração de ativos assistida. |
+| Edição rápida linha a linha (**Cursor Tab**) em `.cs`, `.shader` e `.hlsl`. | Orquestração pesada com **Subagentes** (`research`, `self`, `browser`) e **Workflows Python** (`run_workflow`). |
+| Refatoração multi-arquivo cirúrgica via **Composer (`Ctrl+I`)** com regras `.mdc` engatilhadas por caminho (`globs`). | Auditoria completa das 114+ notas de lore, geração em lote de fragmentos e criação de sistemas inteiros via **Skills** (`.agents/skills/`). |
+| Iteração ao vivo com o editor da Unity aberto, via **Unity CLI** (`unity recompile`, `unity test`) e o servidor MCP `parallax-unity`. | Planejamento arquitetural profundo, revisão de física/matemática de puzzles e geração de ativos assistida. |
 
 ---
 
 ## 2. Arquitetura de Arquivos Ativos do Cursor no Repositório
 
 ```text
-Project-Daedalus/
-├── AGENTS.md                                      # Constituição compartilhada lida automaticamente pelo Cursor e pelo Antigravity
+Project-Parallax/
+├── AGENTS.md                                      # Constituição compartilhada (Cursor e Antigravity)
 └── .cursor/
-    ├── mcp.json                                   # Configuração local dos 3 servidores MCP (Filesystem, Godot 4, Blender)
+    ├── mcp.json                                   # Servidores MCP: Filesystem, parallax-unity (Unity CLI), Blender, ComfyUI
     └── rules/
-        ├── 00-daedalus-constitution.mdc           # (alwaysApply: true) Os 3 Pilares, PT-BR estrito, teto de US$ 2.000
-        ├── 01-lore-vault-obsidian.mdc             # (globs: jogos/parallax/**/*.md) Frontmatter YAML, proteção de restrito/, física de Tritão
-        ├── 02-godot4-gdscript.mdc                 # (globs: **/*.{gd,tscn,tres}) GDScript tipado, Jolt Physics 2.5D, GodotSteam, Auxiliares
-        └── 03-shaders-asymmetric-vision.mdc       # (globs: **/*.gdshader) Shaders dos 3 Olhares (Goliath, Phantom, Cipher) e Lágrima do Leviatã
+        ├── 00-daedalus-constitution.mdc           # (alwaysApply) Os 3 Pilares, PT-BR estrito, pilha Unity, teto de US$ 2.000
+        ├── 01-lore-vault-obsidian.mdc             # (jogos/parallax/**/*.md) Frontmatter, proteção de restrito/, física de Tritão
+        ├── 02-unity-csharp.mdc                    # (client/parallax-unity/**) Assemblies, ScriptableObjects, sem lógica em Update, testes
+        ├── 03-shaders-asymmetric-vision.mdc       # (*.shader, *.hlsl, *.shadergraph) Os 3 Olhares na URP
+        └── 04-unity-networking.mdc                # (Scripts/Networking e Gameplay) NGO + Steam, RPCs, Auxiliares
 ```
 
 ---
 
 ## 3. Passo a Passo de Configuração no Cursor Pro
 
-### Passo 1: Verificar o Carregamento das Rules (`.cursor/rules/*.mdc`)
-1. Abra a pasta `/Users/macbookair/opt/repository/Project-Daedalus` no **Cursor**.
-2. Vá em **Cursor Settings (`Cmd+Shift+J` no macOS) > General > Rules for AI**.
-3. Confirme que as **4 Project Rules** aparecem listadas sob *Project Rules*:
-   - `00-daedalus-constitution` (*Always Apply*)
-   - `01-lore-vault-obsidian` (*Auto Attached em `jogos/parallax/**/*.md`*)
-   - `02-godot4-gdscript` (*Auto Attached em `**/*.{gd,tscn,tres}`*)
-   - `03-shaders-asymmetric-vision` (*Auto Attached em `**/*.gdshader`*)
-4. Dica de uso: No chat ou no Composer, você também pode invocar uma regra manualmente digitando `#01-lore-vault-obsidian` ou `#02-godot4-gdscript`.
+### Passo 1: Verificar o carregamento das Rules
+1. Abra a pasta `C:\opt\Project-Parallax` no **Cursor**.
+2. Vá em **Cursor Settings > Rules** e confirme as **5 Project Rules** acima.
+3. Você também pode invocar uma regra manualmente no chat, por exemplo `@02-unity-csharp`.
 
 ### Passo 2: Ativar os Servidores MCP (`.cursor/mcp.json`)
-1. Certifique-se de ter o **Node.js (v18+)** e o gerenciador Python **`uv`** instalados no macOS:
-   ```bash
-   brew install node uv
-   ```
-2. Vá em **Cursor Settings > MCP**.
-3. O Cursor lerá automaticamente o arquivo `.cursor/mcp.json` do projeto e exibirá os três servidores:
-   - **`daedalus-filesystem`**: Acesso estruturado às notas do Daedalus.
-   - **`godot-mcp`**: Ponte direta com o Godot 4.4+ (para ativar no Godot, instale o addon `godot_mcp` em `addons/` e ative em *Project > Project Settings > Plugins*).
-   - **`blender-mcp`**: Ponte direta com o Blender 4.x (para ativar no Blender, instale o addon `addon.py` do `blender-mcp` em *Edit > Preferences > Add-ons* e clique em *Start MCP Server* na aba lateral `N`).
-4. Clique no botão de atualização ao lado de cada servidor até a luz ficar **verde**.
+1. Pré-requisitos (já presentes nesta máquina): **Node.js**, **uv**, **Unity CLI** (`unity` no PATH) e Unity **6000.3.29f1 LTS**.
+2. Vá em **Cursor Settings > MCP**. O Cursor lê `.cursor/mcp.json` e mostra:
+   - **`daedalus-filesystem`**: acesso estruturado às notas do Daedalus.
+   - **`parallax-unity`**: `unity mcp --project-path client/parallax-unity`. Exige o editor aberto (`unity open client/parallax-unity`) e o pacote `com.unity.pipeline`, que já está no manifest.
+   - **`blender-mcp`**: ponte com o Blender 5.3 (addon `blender_mcp` ativo; clique em *Connect* na aba lateral `N`).
+   - **`comfyui`**: geração local de conceitos e bases de textura (ComfyUI em `http://127.0.0.1:8188`).
+3. As entradas globais `unity` e `unity-mcp` do `~/.cursor/mcp.json` são do Unity AI Assistant e apontam para o mesmo relay; mantenha só uma delas para não duplicar ferramentas.
 
-### Passo 3: Configurar Indexação e Exclusões do Codebase
-1. Em **Cursor Settings > Features > Codebase Indexing**, garanta que a indexação automática esteja ativada.
-2. Caso a pasta do motor Godot seja criada dentro deste repositório, adicione `.godot/`, `*.import` e `*.glb` ao arquivo `.cursorignore` para que o indexador semântico foque 100% nas notas de lore (`.md`), scripts (`.gd`), shaders (`.gdshader`) e cenas (`.tscn`).
+### Passo 3: Indexação
+O `.gitignore` já exclui `Library/`, `Temp/`, `Logs/` e `UserSettings/` do projeto Unity. Se a indexação ficar lenta, crie um `.cursorignore` com `client/parallax-unity/Library/` e `*.png`, `*.glb`, `*.fbx`.
 
-### Passo 4: Atalhos de Produtividade Diária no Cursor
-- **Criar ou revisar Lore:** Abra qualquer arquivo em `jogos/parallax/`, pressione `Cmd+I` (Composer) e peça a alteração. A regra `01-lore-vault-obsidian.mdc` será injetada sozinha. Ao terminar, rode no terminal integrado:
-  ```bash
-  python3 studio/scripts/validate_daedalus.py
-  ```
-- **Exportar Fragmentos para o Godot 4:**
-  ```bash
-  python3 studio/scripts/sync_daedalus.py
-  ```
+### Passo 4: Atalhos de Produtividade Diária
+- **Lore:** edite em `jogos/parallax/` (a regra `01` entra sozinha) e rode `python studio/scripts/validate_daedalus.py`.
+- **Código:** depois de cada mudança, `unity recompile --project-path client/parallax-unity` e `unity test --project-path client/parallax-unity`.
+- **Fragmentos para a Unity:** `python studio/scripts/sync_daedalus.py` e, no editor, `Parallax/Daedalus/Import Generated JSON`.
+- **Reconfigurar o projeto:** menu `Parallax/Bootstrap/Run Full Bootstrap` (idempotente).

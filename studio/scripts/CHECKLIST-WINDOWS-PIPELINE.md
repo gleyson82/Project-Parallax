@@ -1,67 +1,66 @@
-# Checklist Rápido — Ambiente Windows de Produção Visual (PARALLAX)
+# Checklist Rápido — Ambiente Windows de Produção (PARALLAX em Unity 6 LTS)
 
-Todos os arquivos de configuração MCP do repositório já foram convertidos para os caminhos do Windows (`C:/opt/Project-Daedalus` e `C:/opt/Project-Daedalus/client/parallax`):
+Os arquivos de configuração MCP do repositório usam o caminho `C:/opt/Project-Parallax` e o projeto Unity em `client/parallax-unity`:
 
-- `.agents/plugins/daedalus-parallax/mcp_config.json`
-- `studio/ide-antigravity/mcp_config.json`
 - `.cursor/mcp.json`
 - `studio/ide-cursor/mcp.json`
+- `.agents/plugins/daedalus-parallax/mcp_config.json`
+- `studio/ide-antigravity/mcp_config.json`
+
+Os quatro são idênticos. Edite `.cursor/mcp.json` e copie para os outros três.
 
 ---
 
-## 1. Instalar as Ferramentas Gratuitas (US\$ 0)
-
-Execute no PowerShell na raiz do repositório (`c:\opt\Project-Daedalus`):
+## 1. Auditar e instalar a pilha gratuita (US\$ 0)
 
 ```powershell
-# 1. Conferir o que falta
+# Conferir o que falta (Unity 6000.3 LTS + IL2CPP, Blender, Krita, Material Maker etc.)
 .\studio\scripts\setup_windows_pipeline.ps1
 
-# 2. Instalar automaticamente via winget (Godot 4, Blender 4.x, Blockbench, Krita, Inkscape, TrenchBroom)
+# Instalar o que faltar (winget + Unity CLI)
 .\studio\scripts\setup_windows_pipeline.ps1 -Install
 
-# 3. Sincronizar mcp_config.json para o perfil global do Antigravity
+# Zerar o mcp_config.json global do Antigravity (os MCPs ficam no plugin local)
 .\studio\scripts\setup_windows_pipeline.ps1 -SyncMcp
 ```
 
-- **Material Maker** (texturas PBR procedurais): baixar o executável gratuito em `https://www.materialmaker.org/`.
-
 ---
 
-## 2. Validar os Módulos 01 e 02 no Godot 4.4+
+## 2. Validar o projeto Unity
 
-1. Abra o Godot 4.4+ e importe `c:\opt\Project-Daedalus\client\parallax\project.godot`.
-2. Pressione **F5** para rodar [MainMenuSalaDeMaquinas.tscn](../../client/parallax/01_ui_menu_beta/scenes/MainMenuSalaDeMaquinas.tscn):
-   - Pressione qualquer tecla para ver as chapas do logotipo **PARALLAX** deslizarem e travarem.
-   - Use **Setas** para alternar entre as 5 válvulas (note a troca automática de emblema corporativo, Marca de 4 Hastes e retrato de rádio Candeia ↔ Brandt).
-   - Pressione **TAB** para deslizar as 3 camadas de paralaxe (Goliath / Phantom / Cipher).
-   - Segure **ENTER** por `0,4 s` para acionar o medidor **Três Mãos**.
-3. Pressione **F2** (ou clique em **Testar Lentes & Câmera 2.5D**) para abrir [OrthoCamera25D.tscn](../../client/parallax/02_core_shaders_e_camera/scenes/OrthoCamera25D.tscn):
+1. Abra com o Unity CLI: `unity open client/parallax-unity` (Unity **6000.3.29f1 LTS**).
+2. Rode `Parallax/Bootstrap/Run Full Bootstrap` uma vez (é idempotente). Ele garante Force Text, Visible Meta Files, Input System, URP com os 4 renderers dos Olhares, dados base, Localization e as cenas `Boot` e `Lab_Olhares`.
+3. Abra `Assets/_Project/Scenes/Labs/Lab_Olhares.unity` e dê Play:
    - **`[1]`** Olhar do Goliath (LUT térmico + ondas sísmicas da Batida + vinheta de capacete).
-   - **`[2]`** Olhar do Phantom (Sobel ciano + refração N2 + retícula telemétrica vertical).
-   - **`[3]`** Olhar do Cipher (Pele de Rede desaturada).
-   - **`[O]`** Alternar **Override Cego** (`override_terminal_frame.png` com pico da Fonte P).
-   - **`[L]`** Aumentar a Contagem de Vazamento (`0` a `5`) — em `3+`, dispara o **Tremor Vermelho da Diretriz Ômega**.
-   - **`[B]`** Disparar pulso manual da Batida; **`[H]`/`[C]`** testar aquecimento e choque criogênico no `ThermalNode`.
+   - **`[2]`** Olhar do Phantom (Sobel ciano + refração N2).
+   - **`[3]`** Olhar do Cipher (Pele de Rede desaturada). **`[0]`** volta ao renderer neutro.
+   - **`[O]`** Override Cego (moldura do terminal isolado).
+   - **`[L]`** Contagem de Vazamento (`0` a `5`); em `3+`, dispara o **Tremor Vermelho da Diretriz Ômega**.
+   - **`[B]`** Pulso manual da Batida.
+4. Testes: `unity test --project-path client/parallax-unity` (24 EditMode + 1 PlayMode que hospeda a sessão, nasce o jogador e troca de classe).
+5. **Laboratório jogável** (`Assets/_Project/Scenes/Labs/Lab_Jogavel.unity`, primeira cena do build):
+   - Play → **Hospedar sessão (Host)** no painel do canto. O primeiro operador vira Goliath.
+   - WASD move, mouse olha, Espaço pula, **Q** habilidade (Goliath ancora e sustenta a porta de 10 t; Phantom usa o arpéu nos pontos da passarela alta; Cipher invade o terminal da Omni-Cripto), **E** prende cabo (Phantom), botão direito ou **F** passa para a 1ª pessoa, **F1/F2/F3** trocam de classe, **Esc** solta o cursor.
+   - Para 2 ou 3 jogadores: **Window > Multiplayer Play Mode**, ative os jogadores virtuais e dê Play; uma instância hospeda e as outras clicam em **Entrar como cliente**. Cada uma recebe a próxima classe livre e enxerga só o próprio Olhar.
+   - Regerar prefab e cena: `Parallax/Bootstrap/Playable Lab (Player + Lab_Jogavel)`.
 
 ---
 
-## 3. Ligar o Blender MCP para o Módulo 03 (Rigs + 3 Auxiliares)
+## 3. Ligar o Blender MCP
 
-O addon não vem pré-instalado no Blender. Para instalá-lo automaticamente via `uvx`, rode no PowerShell:
+O addon `blender_mcp.py` já está instalado no Blender 5.3 desta máquina. Para reinstalar:
 
 ```powershell
-uvx mcp-for-blender install-addon
+uvx blender-mcp
 ```
 
-Depois, no **Blender**:
-1. Abra **Edit > Preferences > Add-ons** (ou instale manualmente `addon.py` pelo menu `v` no canto superior direito > **Install from Disk...**).
-2. Busque por **MCP for Blender** (ou **Blender MCP**) e marque a caixa para ativar.
-3. Na Viewport 3D, pressione **`N`** para abrir a barra lateral direita, clique na aba **MCP for Blender** (ou **BlenderMCP**) e clique em **Start MCP Server** / **Connect to MCP server**.
-4. De volta ao Antigravity, peça para modelarmos os **3 Auxiliares** (`Macaco`, `Pipa`, `Cartucho de Override`) e os **2 Rigs base** (`Rig_Bipede_Pesado` 2,6 m e `Rig_Bipede_Padrao` 1,8 m) diretamente em `client/parallax/03_classes_e_auxiliares/`.
+No **Blender**:
+1. **Edit > Preferences > Add-ons**, busque **Blender MCP** e ative.
+2. Na Viewport 3D, pressione **`N`**, abra a aba **BlenderMCP** e clique em **Connect**.
+3. Exporte para `client/parallax-unity/Assets/_Project/Art/<categoria>/` (FBX para personagens com rig, GLB para props). Os `.blend` ficam em `art-pipeline/source/blender/`.
 
 ---
 
 ## 4. Nota de Propriedade Intelectual (Regra HTL Games)
 
-Os 4 arquivos raster gerados neste sprint inicial (`portrait_candeia_radio.png`, `portrait_brandt_radio.png`, `chapa_aco_tritao_albedo.png` e `override_terminal_frame.png`) são **bases de protótipo/vertical slice**. Antes do lançamento comercial na Steam, passe cada um por acabamento/paintover humano no **Krita** ou **Aseprite** conforme [blueprint-de-investimento.md](../../jogos/parallax/blueprint-de-investimento.md).
+Os rasters gerados no sprint inicial (`portrait_candeia_radio.png`, `portrait_brandt_radio.png`, `chapa_aco_tritao_albedo.png`, `override_terminal_frame.png`) são **bases de protótipo**. Antes do lançamento comercial na Steam, cada um passa por paintover humano no **Krita** ou **Aseprite**, conforme [blueprint-de-investimento.md](../../jogos/parallax/blueprint-de-investimento.md).

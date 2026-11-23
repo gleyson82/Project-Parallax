@@ -24,5 +24,9 @@ A lore de cada jogo fica em [`jogos/`](jogos/README.md). A planta para um jogo n
 
 O primeiro jogo do arquivo é [Parallax](jogos/parallax/indice.md) (*Parallax: Co-op Infiltration*), um jogo para 1 a 3 jogadores. O vault foi organizado por assunto (lore, facções, classes, itens, biomas, quests, raids, interface), pensado para abrir no Obsidian.
 
+## O Cliente
+
+O jogo é desenvolvido em **Unity 6 LTS (6000.3) + URP**, em 3D com câmera em terceira pessoa, no projeto [`client/parallax-unity/`](client/parallax-unity/). As regras de engenharia para agentes estão em [`AGENTS.md`](AGENTS.md), e a decisão de migração em [`studio/decisoes/0005-migracao-unity-3d.md`](studio/decisoes/0005-migracao-unity-3d.md).
+
 ---
 *"O labirinto não foi feito para manter o monstro preso, foi feito para testar quem ousa entrar."*

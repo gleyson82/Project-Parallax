@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60aec57b0e0028e4f8ba72c6cc96e192, type: 3}
+  m_Name: SessionScaling
+  m_EditorClassIdentifier: Parallax.Core::Parallax.Core.Definitions.SessionScalingProfile
+  table:
+    BaseFinalActionWindowSeconds: 12
+    TwoPlayerWindowBonus: 0.5
+    SoloWindowBonus: 1
+    TwoPlayerEnemyMultiplier: 0.8
+    SoloEnemyMultiplier: 0.65
